@@ -592,17 +592,20 @@ footer {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%; /* Ridotto da 85% per non coprire tutto */
+        width: 70%; /* Manteniamo la larghezza ridotta */
         height: 100vh;
-        background-color: var(--color-earth);
+        background-color: rgba(40, 54, 24, 0.8); /* Verde bosco semi-trasparente */
+        backdrop-filter: blur(15px); /* Effetto Glassmorphism */
+        -webkit-backdrop-filter: blur(15px);
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transition: var(--transition-smooth);
         z-index: 2000;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.2);
         gap: 3rem;
-        display: flex !important; /* Forza display flex per i link */
+        display: flex !important;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     nav ul.active { right: 0; }

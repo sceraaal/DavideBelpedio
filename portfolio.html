@@ -254,6 +254,12 @@
             .work-item-rect { flex-direction: column; align-items: flex-start; text-align: left; }
             .read-more-btn { width: 100%; justify-content: center; }
             .category-icon-card { width: calc(50% - 1rem); }
+            
+            /* FIX LINK MOBILE MENU - BIANCHI SU FONDO DARK */
+            header:not(.scrolled) nav ul li a,
+            nav ul li a {
+                color: var(--white) !important;
+            }
         }
     </style>
 </head>
