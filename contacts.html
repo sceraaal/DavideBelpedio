@@ -9,14 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         body {
-            background-image: linear-gradient(rgba(244, 241, 234, 0.82), rgba(244, 241, 234, 0.82)), 
-                              url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000');
+            background-image: linear-gradient(rgba(244, 241, 234, 0.85), rgba(244, 241, 234, 0.85)), 
+                              url('images/hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
         }
         header:not(.scrolled) .logo-text, header:not(.scrolled) nav ul li a {
             color: var(--text-dark);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -39,17 +46,54 @@
         </nav>
     </header>
 
-    <main style="max-width: 1200px; margin: 8rem auto 4rem; padding: 0 1.5rem;">
-        <div style="text-align: center; margin-bottom: 3rem;">
-            <h1 style="color: var(--color-earth);">Mettiamoci in Contatto</h1>
-            <p>Scrivimi per collaborazioni o curiosità.</p>
+    <main style="max-width: 1200px; margin: 8rem auto 4rem; padding: 0 1.5rem; text-align: center;">
+        <div style="margin-bottom: 5rem;" class="reveal">
+            <h6 style="color: var(--color-leaf); letter-spacing: 4px; margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">RECAPITI</h6>
+            <h1 style="color: var(--color-earth); font-family: 'Georgia', serif; font-size: 3.5rem; margin-bottom: 1.5rem;">Mettiamoci in Contatto</h1>
+            <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Puoi trovarmi su questi canali per consulenze, sopralluoghi o informazioni tecniche.</p>
         </div>
-        <form style="max-width: 700px; margin: 0 auto; background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-            <input type="text" placeholder="Nome" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #ddd;">
-            <input type="email" placeholder="Email" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #ddd;">
-            <textarea placeholder="Messaggio" rows="6" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #ddd;"></textarea>
-            <button type="submit" style="width: 100%; padding: 1.2rem; background: var(--color-leaf); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">INVIA</button>
-        </form>
+
+        <div class="contact-grid">
+            <!-- WHATSAPP -->
+            <a href="https://wa.me/393784171816" target="_blank" class="contact-card reveal" style="text-decoration: none;">
+                <div style="background: white; padding: 3rem 1.5rem; border-radius: 8px; border-top: 5px solid #25D366; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📱</div>
+                    <h3 style="color: var(--color-earth); margin-bottom: 1rem; font-family: 'Georgia', serif;">WhatsApp</h3>
+                    <p style="color: #777; font-size: 0.9rem; margin-bottom: 2rem;">Messaggio rapido per info immediate.</p>
+                    <span style="background: #25D366; color: white; padding: 0.7rem 1.5rem; border-radius: 4px; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px;">SCRIVIMI</span>
+                </div>
+            </a>
+
+            <!-- EMAIL -->
+            <a href="mailto:davide.belpedio@gmail.com" class="contact-card reveal" style="text-decoration: none; transition-delay: 0.1s;">
+                <div style="background: white; padding: 3rem 1.5rem; border-radius: 8px; border-top: 5px solid var(--color-leaf); box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">✉️</div>
+                    <h3 style="color: var(--color-earth); margin-bottom: 1rem; font-family: 'Georgia', serif;">Email</h3>
+                    <p style="color: #777; font-size: 0.9rem; margin-bottom: 2rem;">Per perizie e richieste formali.</p>
+                    <span style="background: var(--color-leaf); color: white; padding: 0.7rem 1.5rem; border-radius: 4px; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px;">INVIA MAIL</span>
+                </div>
+            </a>
+
+            <!-- INSTAGRAM -->
+            <a href="https://www.instagram.com/green_labdesign/" target="_blank" class="contact-card reveal" style="text-decoration: none; transition-delay: 0.2s;">
+                <div style="background: white; padding: 3rem 1.5rem; border-radius: 8px; border-top: 5px solid #E1306C; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📸</div>
+                    <h3 style="color: var(--color-earth); margin-bottom: 1rem; font-family: 'Georgia', serif;">Instagram</h3>
+                    <p style="color: #777; font-size: 0.9rem; margin-bottom: 2rem;">Segui i lavori in corso nel lab.</p>
+                    <span style="background: #E1306C; color: white; padding: 0.7rem 1.5rem; border-radius: 4px; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px;">FOLLOW</span>
+                </div>
+            </a>
+
+            <!-- FACEBOOK -->
+            <a href="https://www.facebook.com/profile.php?id=100054199913680&locale=it_IT" target="_blank" class="contact-card reveal" style="text-decoration: none; transition-delay: 0.3s;">
+                <div style="background: white; padding: 3rem 1.5rem; border-radius: 8px; border-top: 5px solid #1877F2; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔵</div>
+                    <h3 style="color: var(--color-earth); margin-bottom: 1rem; font-family: 'Georgia', serif;">Facebook</h3>
+                    <p style="color: #777; font-size: 0.9rem; margin-bottom: 2rem;">Resta aggiornato sulle novità.</p>
+                    <span style="background: #1877F2; color: white; padding: 0.7rem 1.5rem; border-radius: 4px; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px;">PAGINA</span>
+                </div>
+            </a>
+        </div>
     </main>
 
     <script>
@@ -66,7 +110,21 @@
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) header.classList.add('scrolled');
             else header.classList.remove('scrolled');
+            reveal();
         });
+
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener('load', reveal);
     </script>
     <footer>
         <p>&copy; 2026 Davide Belpedio. Tutti i diritti riservati.</p>
