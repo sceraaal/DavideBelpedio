@@ -1,28 +1,57 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- CONFIGURAZIONE HEAD -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davide Belpedio | Home</title>
+    <title>Davide Belpedio | Agronomo Paesaggista - Natura e Design</title>
+    
+    <!-- SEO E META TAGS -->
+    <meta name="description" content="Studio tecnico del Dott. Davide Belpedio. Consulenza agronomica, progettazione del verde e design del paesaggio a Salerno.">
+    <meta name="keywords" content="Agronomo, Paesaggista, Salerno, Progettazione Giardini, Consulenza Agraria">
+    
+    <!-- OPEN GRAPH / SOCIAL SHARE -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://davidebelpedio.it/">
+    <meta property="og:title" content="Davide Belpedio | Agronomo Paesaggista">
+    <meta property="og:description" content="Trasformiamo la natura in design. Progettazione e consulenza agronomica professionale.">
+    <meta property="og:image" content="images/hero-bg.jpg">
+
+    <!-- TWITTER CARD -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Davide Belpedio | Agronomo Paesaggista">
+    <meta property="twitter:description" content="Trasformiamo la natura in design. Progettazione e consulenza agronomica professionale.">
+    <meta property="twitter:image" content="images/hero-bg.jpg">
+
+    <!-- RISORSE ESTERNE -->
     <link rel="icon" type="image/jpeg" href="images/fogliaLogo.jpg">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- ELEMENTI DI TRANSIZIONE E CURSORE -->
     <div class="page-transition"></div>
     <div class="scroll-progress"></div>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
+    <!-- HEADER E NAVIGAZIONE -->
     <header>
         <nav>
-            <a href="index.html" class="logo">
-                <img src="images/fogliaLogo.jpg" alt="Logo" class="logo-img">
-                <span class="logo-text">Dr. Davide Belpedio - Agronomo Paesaggista</span>
+            <a href="index.html" class="logo" aria-label="Torna alla Home">
+                <img src="images/fogliaLogo.jpg" alt="Logo Davide Belpedio" class="logo-img">
+                <span class="logo-text">Dr. Davide Belpedio</span>
             </a>
-            <ul>
+            
+            <button class="menu-toggle" aria-label="Apri menu di navigazione" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Chi Sono</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contacts.html">Contatti</a></li>
             </ul>
@@ -30,305 +59,231 @@
     </header>
 
     <main>
-        <!-- 1. HERO (SFONDO) -->
-        <section class="hero section-hero" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 10rem 2rem;">
-            <div class="hero-image-container" style="margin-bottom: 2rem;">
-                <img src="images/logo.jpeg" alt="Davide Belpedio Logo" class="hero-image" style="width: 180px; height: 180px; border-radius: 50%;">
+        <!-- SEZIONE HERO -->
+        <section class="hero section-hero">
+            <div class="hero-image-container">
+                <img src="images/logo.jpeg" alt="Davide Belpedio Logo" class="hero-image">
             </div>
-            <h1 class="reveal-mask"><span>Natura, Progettazione e Design</span></h1>
+            <h1 class="reveal">Natura, Progettazione<br>e Design</h1>
             <p style="color: rgba(255,255,255,0.9); font-size: 1.4rem; max-width: 750px; margin: 0 auto; letter-spacing: 1px;" class="reveal">Studio tecnico di consulenze agrarie e progettazione del verde</p>
         </section>
 
-        <!-- 2. CHI SONO (PULITO) -->
-        <section class="section-about reveal" style="padding: 5rem 0; background: var(--white);">
-            <div style="max-width: 1000px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; gap: 4rem; flex-wrap: wrap; justify-content: center;">
-                <div style="flex: 0 1 250px; position: relative;">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Davide Belpedio" style="width: 100%; max-width: 250px; border-radius: 10px; filter: grayscale(100%); transition: 1s; display: block; box-shadow: 15px 15px 0 var(--color-stone);">
+        <!-- SEZIONE CHI SONO -->
+        <section class="section-about">
+            <div style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; gap: 4rem; flex-wrap: wrap; justify-content: center;" class="responsive-flex">
+                <div style="flex: 1; min-width: 280px; max-width: 400px;" class="reveal">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Davide Belpedio" style="width: 100%; border-radius: 10px; box-shadow: 15px 15px 0 var(--color-stone);">
                 </div>
-                <div style="flex: 1.2; min-width: 300px;">
+                <div style="flex: 1.5; min-width: 280px;" class="reveal">
                     <h6 style="color: var(--color-leaf); text-transform: uppercase; letter-spacing: 3px; font-weight: 800; margin-bottom: 0.8rem; font-size: 0.8rem;">L'ESSENZA</h6>
-                    <h2 style="font-family: 'Georgia', serif; font-size: 2.5rem; color: var(--color-earth); line-height: 1.2; margin-bottom: 1.5rem;">Spazi che respirano,<br>tra Scienza e Design</h2>
-                    <p style="color: #666; font-size: 1rem; margin-bottom: 2rem; line-height: 1.7; max-width: 450px;">Come agronomo paesaggista, il mio obiettivo è creare un equilibrio perfetto tra le esigenze tecniche della natura e il desiderio estetico dell'uomo.</p>
-                    <a href="about.html" class="animated-link" style="font-size: 0.8rem; letter-spacing: 2px;">SCOPRI LA MIA STORIA</a>
+                    <h2 style="font-size: 2.5rem; color: var(--color-earth); line-height: 1.2; margin-bottom: 1.5rem;">Spazi che respirano,<br>tra Scienza e Design</h2>
+                    <p style="color: #666; margin-bottom: 2rem; max-width: 450px;">Come agronomo paesaggista, il mio obiettivo è creare un equilibrio perfetto tra le esigenze tecniche della natura e il desiderio estetico dell'uomo.</p>
+                    <a href="about.html" class="animated-link" aria-label="Scopri di più su Davide Belpedio">SCOPRI LA MIA STORIA</a>
                 </div>
             </div>
         </section>
 
-        <!-- 3. I MIEI SERVIZI (DINAMICO E CHIARO) -->
-        <section class="section-services reveal" style="padding: 8rem 0; background: #fcf7ec; position: relative;">
-            <div style="max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; padding: 0 2rem;">
-                <div style="margin-bottom: 2rem; text-align: center;">
+        <!-- SEZIONE SERVIZI (AUTO-SCROLL) -->
+        <section class="section-services reveal" style="padding: 8rem 0; background: #fcf7ec; position: relative; overflow: hidden;">
+            <div style="max-width: 100%; margin: 0 auto; position: relative; z-index: 2;">
+                <div style="margin-bottom: 4rem; text-align: center; padding: 0 2rem;">
                     <h6 style="color: var(--color-leaf); letter-spacing: 4px; margin-bottom: 1rem;">COSA OFFRO</h6>
                     <h2 style="font-family: 'Georgia', serif; font-size: 3.2rem; color: var(--color-earth);">I miei Servizi</h2>
                     <div style="width: 60px; height: 3px; background: var(--neon-green); margin: 2rem auto;"></div>
                 </div>
                 
-                <div class="services-slider-wrapper">
-                    <div class="services-slider">
-                        <!-- 1. Progettazione -->
-                        <div class="service-modern-card reveal-left">
-                            <h3>Progettazione e sviluppo territorio</h3>
-                            <ul>
-                                <li>Piani Urbanistici Comunali</li>
-                                <li>Verde pubblico e privato</li>
-                                <li>Impianti serricoli</li>
-                                <li>Irrigazione e idraulica</li>
-                                <li>Realizzazione vigneti</li>
-                            </ul>
-                            <div class="key-message">Progettazione Sostenibile</div>
-                        </div>
+                <div class="services-container-main" style="position: relative;">
+                    <button class="nav-arrow-netflix left" onclick="scrollServices(-400)" aria-label="Scorri a sinistra">&#10094;</button>
+                    <button class="nav-arrow-netflix right" onclick="scrollServices(400)" aria-label="Scorri a destra">&#10095;</button>
 
-                        <!-- 2. Consulenza -->
-                        <div class="service-modern-card reveal-left" style="transition-delay: 0.1s;">
-                            <h3>Consulenza agronomica e aziendale</h3>
-                            <ul>
-                                <li>Piani sviluppo aziendale</li>
-                                <li>Consulenze enti pubblici</li>
-                                <li>Censimento arboreo</li>
-                                <li>Capitolati d’appalto</li>
-                                <li>Relazioni climatiche</li>
-                            </ul>
-                            <div class="key-message">Strategia e Gestione</div>
-                        </div>
+                    <div class="services-slider-wrapper" id="services-wrapper">
+                        <div class="services-slider" id="services-slider">
+                            <div class="service-modern-card">
+                                <h3>Progettazione e sviluppo territorio</h3>
+                                <ul>
+                                    <li>Piani Urbanistici Comunali</li>
+                                    <li>Verde pubblico e privato</li>
+                                    <li>Impianti serricoli</li>
+                                    <li>Irrigazione e idraulica</li>
+                                    <li>Realizzazione vigneti</li>
+                                </ul>
+                                <div class="key-message">Progettazione Sostenibile</div>
+                            </div>
 
-                        <!-- 3. Analisi -->
-                        <div class="service-modern-card reveal-left" style="transition-delay: 0.2s;">
-                            <h3>Analisi, controlli e sicurezza</h3>
-                            <ul>
-                                <li>Analisi studi pedologici</li>
-                                <li>Verifiche visive (VTA)</li>
-                                <li>Analisi strumentali avanzate</li>
-                            </ul>
-                            <div class="key-message">Salute e Sicurezza</div>
-                        </div>
+                            <div class="service-modern-card">
+                                <h3>Consulenza agronomica e aziendale</h3>
+                                <ul>
+                                    <li>Piani sviluppo aziendale</li>
+                                    <li>Consulenze enti pubblici</li>
+                                    <li>Censimento arboreo</li>
+                                    <li>Capitolati d’appalto</li>
+                                    <li>Relazioni climatiche</li>
+                                </ul>
+                                <div class="key-message">Strategia e Gestione</div>
+                            </div>
 
-                        <!-- 4. Valutazioni -->
-                        <div class="service-modern-card reveal-left" style="transition-delay: 0.3s;">
-                            <h3>Valutazioni tecniche ed economiche</h3>
-                            <ul>
-                                <li>Stime espropriative</li>
-                                <li>Direzione lavori</li>
-                            </ul>
-                            <div class="key-message">Affidabilità Tecnica</div>
-                        </div>
+                            <div class="service-modern-card">
+                                <h3>Analisi, controlli e sicurezza</h3>
+                                <ul>
+                                    <li>Analisi studi pedologici</li>
+                                    <li>Verifiche visive (VTA)</li>
+                                    <li>Analisi strumentali avanzate</li>
+                                </ul>
+                                <div class="key-message">Salute e Sicurezza</div>
+                            </div>
 
-                        <!-- 5. Ambiente -->
-                        <div class="service-modern-card reveal-left" style="transition-delay: 0.4s;">
-                            <h3>Ambiente e autorizzazioni</h3>
-                            <ul>
-                                <li>Impatto ambientale (VIA, VAS)</li>
-                                <li>Agriturismi e Country House</li>
-                                <li>Procedure per IAP</li>
-                            </ul>
-                            <div class="key-message">Guida Normativa</div>
+                            <div class="service-modern-card">
+                                <h3>Valutazioni tecniche ed economiche</h3>
+                                <ul>
+                                    <li>Stime espropriative</li>
+                                    <li>Direzione lavori</li>
+                                </ul>
+                                <div class="key-message">Affidabilità Tecnica</div>
+                            </div>
+
+                            <div class="service-modern-card">
+                                <h3>Ambiente e autorizzazioni</h3>
+                                <ul>
+                                    <li>Impatto ambientale (VIA, VAS)</li>
+                                    <li>Agriturismi e Country House</li>
+                                    <li>Procedure per IAP</li>
+                                </ul>
+                                <div class="key-message">Guida Normativa</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. PRODOTTI IN EVIDENZA (PULITO) -->
-        <section class="section-portfolio reveal" style="padding: 8rem 0; text-align: center; background: #f5efdf;">
-            <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
-                <h2 style="font-family: 'Georgia', serif; font-size: 2.8rem; color: var(--color-earth); margin-bottom: 0.5rem;">Progetti in Evidenza</h2>
-                <p style="color: #666; margin-bottom: 1rem;">Una selezione delle ultime realizzazioni e consulenze.</p>
+        <!-- SEZIONE PORTFOLIO PREVIEW -->
+        <section class="section-portfolio">
+            <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+                <h2 class="reveal" style="font-size: 2.8rem; color: var(--color-earth); margin-bottom: 0.5rem;">Progetti in Evidenza</h2>
+                <p class="reveal" style="color: #666; margin-bottom: 1rem;">Una selezione delle ultime realizzazioni.</p>
                 
-                <div class="slider-wrapper" style="margin-top: 0;">
-                    <button class="slider-arrow prev" onclick="moveSlider(-1)">&#10094;</button>
+                <div class="slider-wrapper">
+                    <button class="slider-arrow prev" onclick="moveSlider(-1)" aria-label="Progetto precedente">&#10094;</button>
                     <div class="projects-slider-container">
                         <div class="projects-slider">
                             <a href="portfolio.html#giardini-privati" class="project-card">
-                                <img src="https://images.unsplash.com/photo-1558905619-17254261b646?auto=format&fit=crop&q=80&w=800" alt="Progetto 1">
-                                <div class="project-info">
-                                    <h3>Giardini Privati</h3>
-                                </div>
+                                <img src="https://images.unsplash.com/photo-1558905619-17254261b646?auto=format&fit=crop&q=80&w=800" alt="Giardini Privati">
+                                <div class="project-info"><h3>Giardini Privati</h3></div>
                             </a>
                             <a href="portfolio.html#terrazzi" class="project-card">
-                                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800" alt="Progetto 2">
-                                <div class="project-info">
-                                    <h3>Terrazzi Bio-diversi</h3>
-                                </div>
+                                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800" alt="Terrazzi">
+                                <div class="project-info"><h3>Terrazzi Bio-diversi</h3></div>
                             </a>
                             <a href="portfolio.html#consulenza" class="project-card active">
-                                <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=800" alt="Progetto 3">
-                                <div class="project-info">
-                                    <h3>Consulenza Agraria</h3>
-                                </div>
-                            </a>
-                            <a href="portfolio.html#parchi" class="project-card">
-                                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800" alt="Progetto 4">
-                                <div class="project-info">
-                                    <h3>Parchi Pubblici</h3>
-                                </div>
-                            </a>
-                            <a href="portfolio.html#orto" class="project-card">
-                                <img src="https://images.unsplash.com/photo-1416872834464-02f58a167af5?auto=format&fit=crop&q=80&w=800" alt="Progetto 5">
-                                <div class="project-info">
-                                    <h3>Orto Urbano</h3>
-                                </div>
+                                <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=800" alt="Consulenza">
+                                <div class="project-info"><h3>Consulenza Agraria</h3></div>
                             </a>
                         </div>
                     </div>
-                    <button class="slider-arrow next" onclick="moveSlider(1)">&#10095;</button>
+                    <button class="slider-arrow next" onclick="moveSlider(1)" aria-label="Prossimo progetto">&#10095;</button>
                 </div>
             </div>
         </section>
 
-        <!-- 5. CONTATTI (SFONDO) -->
-        <section class="section-cta reveal" style="padding: 10rem 0; text-align: center; color: white; background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/prato2.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-            <div style="position: relative; z-index: 2;">
-                <h2 style="font-family: 'Georgia', serif; font-size: 3.8rem; margin-bottom: 2rem;">Hai una visione?<br>Rendiamola viva.</h2>
-                <p style="font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto 4rem;">Uniamo le forze per trasformare il tuo spazio verde in un'opera d'arte naturale.</p>
-                <a href="contacts.html" style="background: var(--neon-green); color: black; padding: 1.2rem 3.5rem; border-radius: 2px; text-decoration: none; font-weight: 800; font-size: 1rem; transition: 0.4s; display: inline-block;">CONTATTAMI ORA</a>
+        <!-- SEZIONE CTA -->
+        <section class="section-cta" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/prato2.jpg'); background-size: cover; background-attachment: fixed; color: white; text-align: center; padding: 6rem 1.5rem;">
+            <div class="reveal">
+                <h2 style="font-size: 3rem; margin-bottom: 2rem;">Hai una visione?<br>Rendiamola viva.</h2>
+                <a href="contacts.html" class="btn" style="background: var(--neon-green); color: black; padding: 1.2rem 3.5rem; text-decoration: none; font-weight: 800; border-radius: 50px;" aria-label="Contatta Davide Belpedio">CONTATTAMI ORA</a>
             </div>
         </section>
     </main>
 
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Davide Belpedio. Tutti i diritti riservati.</p>
+        <div class="designer-signature">
+            Designed by <span class="signature-name">Simona Sceral</span>
+        </div>
+    </footer>
+
+    <!-- LOGICA JAVASCRIPT -->
     <script>
-        // Page Transition on Load
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => {
-                document.querySelector('.page-transition').classList.add('active');
-                reveal();
-            }, 500);
-        });
-
+        // Transizione Pagina al caricamento
         window.addEventListener('load', () => {
-            reveal(); // Trigger again when everything is fully loaded
+            document.querySelector('.page-transition').classList.add('active');
         });
 
+        // Toggle Menu Hamburger (Mobile)
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('#nav-menu');
+        menuToggle.addEventListener('click', () => {
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !expanded);
+            navMenu.classList.toggle('active');
+        });
+
+        // Chiudi menu al click su un link
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer per animazioni reveal
+        const revealOptions = { threshold: 0.15 };
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        document.querySelectorAll('.reveal, .reveal-left').forEach(el => revealObserver.observe(el));
+
+        // Gestione movimento cursore personalizzato
         const dot = document.querySelector('.cursor-dot');
         const outline = document.querySelector('.cursor-outline');
-        const header = document.querySelector('header');
-        const progress = document.querySelector('.scroll-progress');
-
-        // Cursor Movement & Subtle Hero Parallax
-        const hero = document.querySelector('.hero');
-        const heroImg = document.querySelector('.hero-image-container');
-
         window.addEventListener('mousemove', (e) => {
-            const { clientX, clientY } = e;
-            dot.style.left = `${clientX}px`;
-            dot.style.top = `${clientY}px`;
+            dot.style.left = `${e.clientX}px`;
+            dot.style.top = `${e.clientY}px`;
             outline.animate({
-                left: `${clientX}px`,
-                top: `${clientY}px`
-            }, { duration: 600, fill: 'forwards' });
-
-            // Subtle Hero Parallax
-            if (hero.getBoundingClientRect().bottom > 0) {
-                const moveX = (clientX - window.innerWidth / 2) / 80;
-                const moveY = (clientY - window.innerHeight / 2) / 80;
-                heroImg.style.transform = `translate(${moveX}px, ${moveY}px)`;
-            }
+                left: `${e.clientX}px`,
+                top: `${e.clientY}px`
+            }, { duration: 500, fill: 'forwards' });
         });
 
-        // Scroll Logic: Header, Progress & Gentle Parallax
+        // Logica Scroll Header e Progress Bar
         window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const progress = document.querySelector('.scroll-progress');
             const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
             progress.style.width = `${scrollPercent}%`;
-
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-
-            // Gentle Background Parallax
-            const parallaxSections = document.querySelectorAll('.hero, .section-services, .section-cta');
-            parallaxSections.forEach(sec => {
-                const rect = sec.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    const offset = (window.scrollY - sec.offsetTop) * 0.15;
-                    sec.style.backgroundPositionY = `${offset}px`;
-                }
-            });
-
-            reveal();
+            
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
         });
 
-        // Magnetic Buttons (Refined)
-        const magneticElements = document.querySelectorAll('nav ul li a, .animated-link, .slider-arrow, .section-cta a');
-        magneticElements.forEach(el => {
-            el.addEventListener('mousemove', (e) => {
-                const rect = el.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
-                outline.style.transform = `translate(-50%, -50%) scale(1.4)`;
-            });
-            el.addEventListener('mouseleave', () => {
-                el.style.transform = `translate(0px, 0px)`;
-                outline.style.transform = `translate(-50%, -50%) scale(1)`;
-            });
-        });
-
-        // Refined Reveal Logic
-        function reveal() {
-            const reveals = document.querySelectorAll(".reveal, .reveal-mask, .reveal-scale, .reveal-left, .reveal-right");
-            reveals.forEach(el => {
-                const windowHeight = window.innerHeight;
-                const elementTop = el.getBoundingClientRect().top;
-                const elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    el.classList.add("active");
-                }
-            });
-        }
-
-        // Gestione Slider Progetti
+        // Logica Slider Progetti (Portfolio Preview)
         const slider = document.querySelector('.projects-slider');
-        let isMoving = false;
-
-        function updateActiveCard() {
-            const allCards = document.querySelectorAll('.project-card');
-            allCards.forEach((c, index) => {
-                c.classList.remove('active', 'prev-card', 'next-card');
-                if (index === 2) c.classList.add('active');
-                else if (index === 1) c.classList.add('prev-card');
-                else if (index === 3) c.classList.add('next-card');
-            });
-        }
-
         function moveSlider(direction) {
-            if (isMoving) return;
-            isMoving = true;
-
-            slider.style.transition = "transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)";
-            const moveAmount = direction * 240; 
-            slider.style.transform = `translateX(${-moveAmount}px)`;
-
-            setTimeout(() => {
-                slider.style.transition = "none";
-                const allCards = document.querySelectorAll('.project-card');
-                if (direction === 1) {
-                    slider.appendChild(allCards[0]);
-                } else {
-                    slider.insertBefore(allCards[allCards.length - 1], allCards[0]);
-                }
-                slider.style.transform = `translateX(0)`;
-                updateActiveCard();
-                isMoving = false;
-            }, 800);
+            const cards = document.querySelectorAll('.project-card');
+            let activeIndex = Array.from(cards).findIndex(c => c.classList.contains('active'));
+            if (activeIndex === -1) activeIndex = 0;
+            cards[activeIndex].classList.remove('active');
+            
+            let nextIndex = activeIndex + direction;
+            if (nextIndex < 0) nextIndex = cards.length - 1;
+            if (nextIndex >= cards.length) nextIndex = 0;
+            
+            cards[nextIndex].classList.add('active');
+            const cardWidth = cards[0].offsetWidth;
+            const offset = -nextIndex * (cardWidth - (window.innerWidth < 768 ? 20 : 40));
+            slider.style.transform = `translateX(${offset}px)`;
         }
 
-        updateActiveCard();
-
-        slider.addEventListener('click', (e) => {
-            if (isMoving) return;
-            const card = e.target.closest('.project-card');
-            if (!card) return;
-            const allCards = Array.from(document.querySelectorAll('.project-card'));
-            const index = allCards.indexOf(card);
-            if (index < 2) moveSlider(-1);
-            else if (index > 2) moveSlider(1);
-        });
-
-        // Infinite Auto-Scroll for Services
-        const servicesWrapper = document.querySelector('.services-slider-wrapper');
-        const servicesSlider = document.querySelector('.services-slider');
+        // Logica Auto-Scroll Orizzontale Servizi + Interazione Manuale
+        const servicesWrapper = document.getElementById('services-wrapper');
+        const servicesSlider = document.getElementById('services-slider');
         
-        // Clone cards for infinite loop
         const originalCards = Array.from(servicesSlider.children);
         originalCards.forEach(card => {
             const clone = card.cloneNode(true);
@@ -337,7 +292,8 @@
 
         let scrollPos = 0;
         let isPaused = false;
-        const scrollSpeed = 0.6; // Regola la velocità qui
+        let autoScrollId;
+        const scrollSpeed = 0.8;
 
         function startAutoScroll() {
             if (!isPaused) {
@@ -347,20 +303,37 @@
                 }
                 servicesWrapper.scrollLeft = scrollPos;
             }
-            requestAnimationFrame(startAutoScroll);
+            autoScrollId = requestAnimationFrame(startAutoScroll);
         }
 
         servicesWrapper.addEventListener('mouseenter', () => isPaused = true);
-        servicesWrapper.addEventListener('mouseleave', () => isPaused = false);
+        servicesWrapper.addEventListener('mouseleave', () => {
+            isPaused = false;
+            scrollPos = servicesWrapper.scrollLeft;
+        });
 
-        // Start the loop
+        servicesWrapper.addEventListener('wheel', (e) => {
+            isPaused = true;
+            servicesWrapper.scrollLeft += e.deltaX || e.deltaY;
+            scrollPos = servicesWrapper.scrollLeft;
+            
+            clearTimeout(window.resumeScrollTimer);
+            window.resumeScrollTimer = setTimeout(() => {
+                if (!servicesWrapper.matches(':hover')) isPaused = false;
+            }, 2000);
+        }, { passive: true });
+
+        function scrollServices(amount) {
+            isPaused = true;
+            servicesWrapper.scrollBy({ left: amount, behavior: 'smooth' });
+            
+            setTimeout(() => {
+                scrollPos = servicesWrapper.scrollLeft;
+                if (!servicesWrapper.matches(':hover')) isPaused = false;
+            }, 1000);
+        }
+
         startAutoScroll();
     </script>
-    <footer>
-        <p>&copy; 2026 Davide Belpedio. Tutti i diritti riservati.</p>
-        <div class="designer-signature">
-            Designed by <span class="signature-name">Simona Sceral</span>
-        </div>
-    </footer>
 </body>
 </html>

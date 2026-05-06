@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <!-- CONFIGURAZIONE HEAD -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davide Belpedio | 404 - Pagina non trovata</title>
+    
+    <!-- RISORSE ESTERNE -->
+    <link rel="icon" type="image/jpeg" href="images/fogliaLogo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- STILI SPECIFICI 404 -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            background-color: var(--color-stone);
+            padding: 2rem;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--color-leaf);
+            line-height: 1;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--color-earth);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        .btn-home {
+            background: var(--color-earth);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s ease;
+            display: inline-block;
+        }
+        .btn-home:hover {
+            background: var(--neon-green);
+            color: black;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(57, 255, 20, 0.3);
+        }
+        .leaf-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- CONTENUTO ERRORE -->
+    <div class="leaf-icon">🌿</div>
+    <div class="error-code">404</div>
+    <h1 class="error-message">Ops! Sembra che tu abbia smarrito la strada nel bosco.</h1>
+    <p style="margin-bottom: 2rem; color: #666;">La pagina che stai cercando non esiste o è stata spostata.</p>
+    
+    <!-- AZIONE DI RITORNO -->
+    <a href="index.html" class="btn-home" aria-label="Torna alla Home Page">Torna alla Home</a>
+</body>
+</html>

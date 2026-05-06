@@ -1,81 +1,119 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- CONFIGURAZIONE HEAD -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davide Belpedio | About Us</title>
+    <title>Davide Belpedio | Chi Sono - Esperienza e Professionalità</title>
+    
+    <!-- SEO E META TAGS -->
+    <meta name="description" content="Scopri la storia e le qualifiche del Dott. Davide Belpedio, agronomo paesaggista iscritto all'ordine di Salerno.">
+    
+    <!-- RISORSE ESTERNE -->
     <link rel="icon" type="image/jpeg" href="images/fogliaLogo.jpg">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- STILI SPECIFICI PAGINA -->
     <style>
         body {
             background-image: linear-gradient(rgba(244, 241, 234, 0.82), rgba(244, 241, 234, 0.82)), 
                               url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
-            background-position: center;
             background-attachment: fixed;
         }
         header:not(.scrolled) .logo-text, header:not(.scrolled) nav ul li a {
             color: var(--text-dark);
         }
+        header:not(.scrolled) .menu-toggle span {
+            background-color: var(--text-dark);
+        }
     </style>
 </head>
 <body>
+    <!-- ELEMENTI DI TRANSIZIONE E CURSORE -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
+    <!-- HEADER E NAVIGAZIONE -->
     <header>
         <nav>
-            <a href="index.html" class="logo">
+            <a href="index.html" class="logo" aria-label="Torna alla Home">
                 <img src="images/fogliaLogo.jpg" alt="Logo" class="logo-img">
-                <span class="logo-text">Dr. Davide Belpedio - Agronomo Paesaggista</span>
+                <span class="logo-text">Dr. Davide Belpedio</span>
             </a>
-            <ul>
+            
+            <button class="menu-toggle" aria-label="Apri menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Chi Sono</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contacts.html">Contatti</a></li>
             </ul>
         </nav>
     </header>
 
-    <main style="max-width: 1200px; margin: 8rem auto 4rem; padding: 0 1.5rem; animation: fadeInUp 1s ease-out;">
-        <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center;">
-            <div style="flex: 1; min-width: 300px;">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Davide" style="width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 8px solid white;">
+    <!-- CONTENUTO PRINCIPALE -->
+    <main style="max-width: 1200px; margin: 10rem auto 6rem; padding: 0 1.5rem;">
+        <!-- SEZIONE BIOGRAFIA -->
+        <div style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center; justify-content: center;" class="reveal">
+            <div style="flex: 1; min-width: 280px; max-width: 450px;">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Dott. Davide Belpedio" style="width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 8px solid white;">
             </div>
-            <div style="flex: 1.5; min-width: 300px;">
-                <h1 style="color: var(--color-earth);">Dott. Davide Belpedio Agronomo Paesaggista</h1>
-                <p style="font-size: 1.1rem; color: #432818;">Dottore Regolarmente iscritto con il n°793 all'ordine dei Dottori Agronomi e Forestali della provincia di Salerno e dal collegio dei Periti Agrari Laureati di salerno al n°902.</p>
-                <div style="margin-top: 2rem; display: flex; gap: 1rem;">
-                    <span style="background: white; color: var(--color-leaf); padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: bold; border: 1px solid #e0ddd5;">Agronomia</span>
-                    <span style="background: white; color: var(--color-leaf); padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: bold; border: 1px solid #e0ddd5;">Paesaggistica</span>
+            <div style="flex: 1.5; min-width: 280px;">
+                <h1 style="color: var(--color-earth); margin-bottom: 2rem; font-size: calc(1.8rem + 1vw);">Dott. Davide Belpedio<br>Agronomo Paesaggista</h1>
+                <p style="font-size: 1.1rem; color: #432818; line-height: 1.8;">Dottore Regolarmente iscritto con il n°793 all'ordine dei Dottori Agronomi e Forestali della provincia di Salerno e dal collegio dei Periti Agrari Laureati di Salerno al n°902.</p>
+                <div style="margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: flex-start;">
+                    <span style="background: white; color: var(--color-leaf); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: bold; border: 1px solid #e0ddd5; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">Agronomia</span>
+                    <span style="background: white; color: var(--color-leaf); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: bold; border: 1px solid #e0ddd5; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">Paesaggistica</span>
                 </div>
             </div>
         </div>
     </main>
 
-    <script>
-        const dot = document.querySelector('.cursor-dot');
-        const outline = document.querySelector('.cursor-outline');
-        const header = document.querySelector('header');
-
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX; const posY = e.clientY;
-            dot.style.left = `${posX}px`; dot.style.top = `${posY}px`;
-            outline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 400, fill: 'forwards' });
-        });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-        });
-    </script>
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 Davide Belpedio. Tutti i diritti riservati.</p>
         <div class="designer-signature">
             Designed by <span class="signature-name">Simona Sceral</span>
         </div>
     </footer>
+
+    <!-- LOGICA JAVASCRIPT -->
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('#nav-menu');
+        menuToggle.addEventListener('click', () => {
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !expanded);
+            navMenu.classList.toggle('active');
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        const dot = document.querySelector('.cursor-dot');
+        const outline = document.querySelector('.cursor-outline');
+        window.addEventListener('mousemove', (e) => {
+            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
+            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: 'forwards' });
+        });
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
 </body>
 </html>

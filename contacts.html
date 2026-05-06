@@ -1,136 +1,223 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- CONFIGURAZIONE HEAD -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davide Belpedio | Contatti</title>
+    <title>Davide Belpedio | Contatti - Prenota una Consulenza</title>
+    
+    <!-- SEO E META TAGS -->
+    <meta name="description" content="Mettiti in contatto con il Dott. Davide Belpedio via WhatsApp, Email o Social. Disponibile per consulenze agronomiche a Salerno.">
+    
+    <!-- RISORSE ESTERNE -->
     <link rel="icon" type="image/jpeg" href="images/fogliaLogo.jpg">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <!-- STILI SPECIFICI PAGINA -->
     <style>
         body {
             background-image: linear-gradient(rgba(244, 241, 234, 0.85), rgba(244, 241, 234, 0.85)), 
                               url('images/hero-bg.jpg');
             background-size: cover;
-            background-position: center;
             background-attachment: fixed;
         }
         header:not(.scrolled) .logo-text, header:not(.scrolled) nav ul li a {
             color: var(--text-dark);
         }
+        header:not(.scrolled) .menu-toggle span {
+            background-color: var(--text-dark);
+        }
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 2rem;
-            max-width: 1100px;
+            max-width: 900px;
             margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .app-icon-card {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background: white;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: var(--transition-smooth);
+        }
+        .app-icon svg {
+            width: 35px;
+            height: 35px;
+            transition: var(--transition-smooth);
+        }
+        .app-icon-card:hover {
+            transform: translateY(-8px) scale(1.03);
+        }
+        .app-icon-card:hover .app-icon {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        .app-icon-card span {
+            color: var(--color-earth);
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        /* BRAND COLORS SOCIAL */
+        .icon-wa { border-bottom: 5px solid #25D366; color: #25D366; }
+        .icon-mail { border-bottom: 5px solid var(--color-leaf); color: var(--color-leaf); }
+        .icon-ig { border-bottom: 5px solid #E1306C; color: #E1306C; }
+        .icon-fb { border-bottom: 5px solid #1877F2; color: #1877F2; }
+
+        .app-icon-card:hover .icon-wa { background: #25D366; color: white; }
+        .app-icon-card:hover .icon-mail { background: var(--color-leaf); color: white; }
+        .app-icon-card:hover .icon-ig { background: #E1306C; color: white; }
+        .app-icon-card:hover .icon-fb { background: #1877F2; color: white; }
+
+        @media (max-width: 480px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            .app-icon { width: 70px; height: 70px; }
+            .app-icon svg { width: 30px; height: 30px; }
+            h1 { font-size: 2.5rem !important; }
         }
     </style>
 </head>
 <body>
+    <!-- ELEMENTI DI TRANSIZIONE E CURSORE -->
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
+    <!-- HEADER E NAVIGAZIONE -->
     <header>
         <nav>
-            <a href="index.html" class="logo">
-                <img src="images/fogliaLogo.jpg" alt="Logo" class="logo-img">
-                <span class="logo-text">Dr. Davide Belpedio - Agronomo Paesaggista</span>
+            <a href="index.html" class="logo" aria-label="Torna alla Home">
+                <img src="images/fogliaLogo.jpg" alt="Logo Davide Belpedio" class="logo-img">
+                <span class="logo-text">Dr. Davide Belpedio</span>
             </a>
-            <ul>
+            
+            <button class="menu-toggle" aria-label="Apri menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html">Chi Sono</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="contacts.html">Contatti</a></li>
             </ul>
         </nav>
     </header>
 
-    <main style="max-width: 1200px; margin: 8rem auto 4rem; padding: 0 1.5rem; text-align: center;">
-        <div style="margin-bottom: 5rem;" class="reveal">
-            <h6 style="color: var(--color-leaf); letter-spacing: 4px; margin-bottom: 1rem; text-transform: uppercase; font-weight: 800;">RECAPITI</h6>
-            <h1 style="color: var(--color-earth); font-family: 'Georgia', serif; font-size: 3.5rem; margin-bottom: 1.5rem;">Mettiamoci in Contatto</h1>
-            <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Puoi trovarmi su questi canali per consulenze, sopralluoghi o informazioni tecniche.</p>
+    <!-- CONTENUTO PRINCIPALE -->
+    <main style="max-width: 1200px; margin: 10rem auto 6rem; padding: 0 1.5rem; text-align: center;">
+        <!-- TITOLO PAGINA -->
+        <div style="margin-bottom: 6rem;" class="reveal">
+            <h1 style="color: var(--color-earth); font-size: 3.5rem; margin-bottom: 1.5rem;">Canali Diretti</h1>
+            <p style="color: #666; font-size: 1.1rem; max-width: 500px; margin: 0 auto;">Inizia una conversazione per dare vita al tuo prossimo progetto verde.</p>
         </div>
 
+        <!-- GRIGLIA CONTATTI SOCIAL -->
         <div class="contact-grid">
             <!-- WHATSAPP -->
-            <a href="https://wa.me/393784171816" target="_blank" class="contact-card reveal" style="text-decoration: none;">
-                <div style="background: white; padding: 3rem 1.5rem; border-radius: 8px; border-top: 5px solid #25D366; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📱</div>
-                    <h3 style="color: var(--color-earth); margin-bottom: 1rem; font-family: 'Georgia', serif;">WhatsApp</h3>
-                    <p style="color: #777; font-size: 0.9rem; margin-bottom: 2rem;">Messaggio rapido per info immediate.</p>
-                    <span style="background: #25D366; color: white; padding: 0.7rem 1.5rem; border-radius: 4px; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px;">SCRIVIMI</span>
+            <a href="https://wa.me/393784171816" target="_blank" class="app-icon-card reveal" aria-label="Contatta via WhatsApp">
+                <div class="app-icon icon-wa">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
                 </div>
+                <span>WhatsApp</span>
             </a>
 
             <!-- EMAIL -->
-            <a href="mailto:davide.belpedio@gmail.com" class="contact-card reveal" style="text-decoration: none; transition-delay: 0.1s;">
-                <div style="background: white; padding: 3rem 1.5rem; border-radius: 8px; border-top: 5px solid var(--color-leaf); box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">✉️</div>
-                    <h3 style="color: var(--color-earth); margin-bottom: 1rem; font-family: 'Georgia', serif;">Email</h3>
-                    <p style="color: #777; font-size: 0.9rem; margin-bottom: 2rem;">Per perizie e richieste formali.</p>
-                    <span style="background: var(--color-leaf); color: white; padding: 0.7rem 1.5rem; border-radius: 4px; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px;">INVIA MAIL</span>
+            <a href="mailto:davide.belpedio@gmail.com" class="app-icon-card reveal" style="transition-delay: 0.1s;" aria-label="Invia un'Email">
+                <div class="app-icon icon-mail">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
                 </div>
+                <span>Email</span>
             </a>
 
             <!-- INSTAGRAM -->
-            <a href="https://www.instagram.com/green_labdesign/" target="_blank" class="contact-card reveal" style="text-decoration: none; transition-delay: 0.2s;">
-                <div style="background: white; padding: 3rem 1.5rem; border-radius: 8px; border-top: 5px solid #E1306C; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📸</div>
-                    <h3 style="color: var(--color-earth); margin-bottom: 1rem; font-family: 'Georgia', serif;">Instagram</h3>
-                    <p style="color: #777; font-size: 0.9rem; margin-bottom: 2rem;">Segui i lavori in corso nel lab.</p>
-                    <span style="background: #E1306C; color: white; padding: 0.7rem 1.5rem; border-radius: 4px; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px;">FOLLOW</span>
+            <a href="https://www.instagram.com/green_labdesign/" target="_blank" class="app-icon-card reveal" style="transition-delay: 0.2s;" aria-label="Segui su Instagram">
+                <div class="app-icon icon-ig">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
                 </div>
+                <span>Instagram</span>
             </a>
 
             <!-- FACEBOOK -->
-            <a href="https://www.facebook.com/profile.php?id=100054199913680&locale=it_IT" target="_blank" class="contact-card reveal" style="text-decoration: none; transition-delay: 0.3s;">
-                <div style="background: white; padding: 3rem 1.5rem; border-radius: 8px; border-top: 5px solid #1877F2; box-shadow: 0 10px 30px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔵</div>
-                    <h3 style="color: var(--color-earth); margin-bottom: 1rem; font-family: 'Georgia', serif;">Facebook</h3>
-                    <p style="color: #777; font-size: 0.9rem; margin-bottom: 2rem;">Resta aggiornato sulle novità.</p>
-                    <span style="background: #1877F2; color: white; padding: 0.7rem 1.5rem; border-radius: 4px; font-weight: 800; font-size: 0.75rem; letter-spacing: 1px;">PAGINA</span>
+            <a href="https://www.facebook.com/profile.php?id=100054199913680&locale=it_IT" target="_blank" class="app-icon-card reveal" style="transition-delay: 0.3s;" aria-label="Segui su Facebook">
+                <div class="app-icon icon-fb">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-8.74h-2.94v-3.411h2.94v-2.511c0-2.915 1.781-4.502 4.38-4.502 1.245 0 2.316.093 2.628.134v3.046l-1.803.001c-1.414 0-1.687.672-1.687 1.658v2.174h3.37l-.439 3.411h-2.931v8.74h6.027c.732 0 1.325-.593 1.325-1.324v-21.351c0-.732-.593-1.325-1.325-1.325z"/>
+                    </svg>
                 </div>
+                <span>Facebook</span>
             </a>
         </div>
     </main>
 
-    <script>
-        const dot = document.querySelector('.cursor-dot');
-        const outline = document.querySelector('.cursor-outline');
-        const header = document.querySelector('header');
-
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX; const posY = e.clientY;
-            dot.style.left = `${posX}px`; dot.style.top = `${posY}px`;
-            outline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 400, fill: 'forwards' });
-        });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-            reveal();
-        });
-
-        function reveal() {
-            const reveals = document.querySelectorAll(".reveal");
-            reveals.forEach(el => {
-                const windowHeight = window.innerHeight;
-                const elementTop = el.getBoundingClientRect().top;
-                const elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    el.classList.add("active");
-                }
-            });
-        }
-        window.addEventListener('load', reveal);
-    </script>
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 Davide Belpedio. Tutti i diritti riservati.</p>
         <div class="designer-signature">
             Designed by <span class="signature-name">Simona Sceral</span>
         </div>
     </footer>
+
+    <!-- LOGICA JAVASCRIPT -->
+    <script>
+        // Toggle Menu Hamburger
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('#nav-menu');
+        menuToggle.addEventListener('click', () => {
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !expanded);
+            navMenu.classList.toggle('active');
+        });
+
+        // Intersection Observer per animazioni reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Gestione movimento cursore personalizzato
+        const dot = document.querySelector('.cursor-dot');
+        const outline = document.querySelector('.cursor-outline');
+        window.addEventListener('mousemove', (e) => {
+            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
+            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: 'forwards' });
+        });
+
+        // Logica Scroll Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
 </body>
 </html>
