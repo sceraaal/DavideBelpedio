@@ -579,16 +579,20 @@ footer {
     * { cursor: auto !important; }
     .cursor-dot, .cursor-outline { display: none !important; }
     
-    header { padding: 0.8rem 0; background-color: var(--color-sage); }
-    header:not(.scrolled) { background-color: var(--color-sage); } /* Forza sfondo visibile su mobile */
+    header { padding: 0.8rem 0; background-color: var(--color-sage) !important; }
+    header:not(.scrolled) { background-color: var(--color-sage) !important; }
     
+    /* Forza colore bianco per logotext e link header su tutte le pagine */
+    .logo-text, nav ul li a { color: var(--white) !important; }
+
     .menu-toggle { display: flex; }
+    .menu-toggle span { background-color: var(--white) !important; }
     
     nav ul {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 85%;
+        width: 70%; /* Ridotto da 85% per non coprire tutto */
         height: 100vh;
         background-color: var(--color-earth);
         flex-direction: column;
@@ -598,11 +602,25 @@ footer {
         z-index: 2000;
         box-shadow: -10px 0 30px rgba(0,0,0,0.3);
         gap: 3rem;
+        display: flex !important; /* Forza display flex per i link */
     }
     
     nav ul.active { right: 0; }
     
-    nav ul li a { font-size: 1.4rem; }
+    /* Overlay quando il menu è aperto */
+    body.menu-open::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1999;
+        backdrop-filter: blur(3px);
+    }
+    
+    nav ul li a { font-size: 1.4rem; color: var(--white) !important; }
 
     .hero h1 { font-size: 2.5rem; }
     .hero p { font-size: 1.1rem !important; }
@@ -610,26 +628,41 @@ footer {
     
     section { padding: 4rem 1.2rem; }
 
-    .service-modern-card { width: 280px; padding: 2rem 1.5rem; }
-    .services-slider { padding: 0 1.5rem; }
-    .nav-arrow-netflix { display: none; }
+    /* Servizi: sblocco scroll orizzontale */
+    .services-slider-wrapper { 
+        overflow-x: auto !important; 
+        -webkit-overflow-scrolling: touch; 
+        padding-bottom: 3rem;
+    }
+    .services-slider { 
+        flex-direction: row !important; 
+        display: flex !important;
+        gap: 1.5rem !important;
+        padding: 0 1.5rem !important;
+    }
+    .service-modern-card { 
+        width: 280px !important; 
+        padding: 2rem 1.5rem !important; 
+        flex-shrink: 0 !important;
+    }
+    .nav-arrow-netflix { display: none !important; }
     
     .project-card { min-width: 260px; height: 350px; }
     .slider-arrow { width: 45px; height: 45px; }
 
-    /* Fix per griglie e flex che usano inline styles */
-    [style*="display: flex"] {
+    /* Fix per griglie e flex che usano inline styles (tranne quelli orizzontali) */
+    [style*="display: grid"]:not(.services-grid), 
+    [style*="display: flex"]:not(nav):not(.services-slider):not(.projects-slider) {
         flex-direction: column !important;
+        grid-template-columns: 1fr !important;
         align-items: center !important;
         text-align: center !important;
         gap: 2rem !important;
     }
-    
-    /* Eccezione per nav e slider */
-    nav, .services-slider, .projects-slider { flex-direction: row !important; }
 }
 
 @media (max-width: 480px) {
     .hero h1 { font-size: 2.2rem; }
-    .logo-text { font-size: 0.9rem; }
+    .logo-text { font-size: 0.85rem; }
+    nav ul { width: 80%; }
 }
