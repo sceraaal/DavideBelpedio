@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davide Belpedio | Contatti</title>
+    <link rel="icon" type="image/jpeg" href="images/fogliaLogo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(244, 241, 234, 0.82), rgba(244, 241, 234, 0.82)), 
+                              url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        header:not(.scrolled) .logo-text, header:not(.scrolled) nav ul li a {
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/fogliaLogo.jpg" alt="Logo" class="logo-img">
+                <span class="logo-text">Dr. Davide Belpedio - Agronomo Paesaggista</span>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contacts.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 1200px; margin: 8rem auto 4rem; padding: 0 1.5rem;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="color: var(--color-earth);">Mettiamoci in Contatto</h1>
+            <p>Scrivimi per collaborazioni o curiosità.</p>
+        </div>
+        <form style="max-width: 700px; margin: 0 auto; background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <input type="text" placeholder="Nome" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #ddd;">
+            <input type="email" placeholder="Email" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #ddd;">
+            <textarea placeholder="Messaggio" rows="6" required style="width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #ddd;"></textarea>
+            <button type="submit" style="width: 100%; padding: 1.2rem; background: var(--color-leaf); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">INVIA</button>
+        </form>
+    </main>
+
+    <script>
+        const dot = document.querySelector('.cursor-dot');
+        const outline = document.querySelector('.cursor-outline');
+        const header = document.querySelector('header');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX; const posY = e.clientY;
+            dot.style.left = `${posX}px`; dot.style.top = `${posY}px`;
+            outline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 400, fill: 'forwards' });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
+    <footer>
+        <p>&copy; 2026 Davide Belpedio. Tutti i diritti riservati.</p>
+        <div class="designer-signature">
+            Designed by <span class="signature-name">Simona Sceral</span>
+        </div>
+    </footer>
+</body>
+</html>

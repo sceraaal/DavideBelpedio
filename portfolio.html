@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davide Belpedio | Portfolio</title>
+    <link rel="icon" type="image/jpeg" href="images/fogliaLogo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: linear-gradient(rgba(244, 241, 234, 0.82), rgba(244, 241, 234, 0.82)), 
+                              url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        header:not(.scrolled) .logo-text, header:not(.scrolled) nav ul li a {
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/fogliaLogo.jpg" alt="Logo" class="logo-img">
+                <span class="logo-text">Dr. Davide Belpedio - Agronomo Paesaggista</span>
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contacts.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="max-width: 1200px; margin: 8rem auto 4rem; padding: 0 1.5rem;">
+        <h1 style="color: var(--color-earth); font-size: 3rem; margin-bottom: 1rem;">Portfolio Progetti</h1>
+        <p style="color: #666; margin-bottom: 2rem;">Esplora le nostre realizzazioni suddivise per categoria.</p>
+        
+        <!-- Navigazione Rapida Categorie -->
+        <nav class="portfolio-nav" style="margin-bottom: 4rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; position: sticky; top: 100px; z-index: 100; background: rgba(244, 241, 234, 0.8); backdrop-filter: blur(10px); padding: 1rem; border-radius: 50px; border: 1px solid rgba(0,0,0,0.05);">
+            <a href="#giardini-privati" style="text-decoration: none; color: var(--color-earth); font-weight: 700; padding: 0.7rem 1.5rem; border-radius: 30px; background: white; transition: 0.3s; border: 1px solid #e0ddd5;">Giardini Privati</a>
+            <a href="#terrazzi" style="text-decoration: none; color: var(--color-earth); font-weight: 700; padding: 0.7rem 1.5rem; border-radius: 30px; background: white; transition: 0.3s; border: 1px solid #e0ddd5;">Terrazzi</a>
+            <a href="#consulenza" style="text-decoration: none; color: var(--color-earth); font-weight: 700; padding: 0.7rem 1.5rem; border-radius: 30px; background: white; transition: 0.3s; border: 1px solid #e0ddd5;">Consulenza</a>
+            <a href="#parchi" style="text-decoration: none; color: var(--color-earth); font-weight: 700; padding: 0.7rem 1.5rem; border-radius: 30px; background: white; transition: 0.3s; border: 1px solid #e0ddd5;">Parchi Pubblici</a>
+            <a href="#orto" style="text-decoration: none; color: var(--color-earth); font-weight: 700; padding: 0.7rem 1.5rem; border-radius: 30px; background: white; transition: 0.3s; border: 1px solid #e0ddd5;">Orto Urbano</a>
+        </nav>
+
+        <!-- SEZIONE: Giardini Privati -->
+        <section id="giardini-privati" style="margin-bottom: 5rem; scroll-margin-top: 180px;">
+            <h2 style="color: var(--color-leaf); border-left: 5px solid var(--neon-green); padding-left: 1rem; margin-bottom: 2rem;">Giardini Privati</h2>
+            <div class="portfolio-grid">
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1558905619-17254261b646?auto=format&fit=crop&q=80&w=800');"></div>
+                    <div class="card-content">
+                        <h3>Villa Oasi Verde</h3>
+                        <p>Progettazione integrale di un giardino privato con essenze autoctone e sistema di irrigazione domotico.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE: Terrazzi -->
+        <section id="terrazzi" style="margin-bottom: 5rem; scroll-margin-top: 180px;">
+            <h2 style="color: var(--color-leaf); border-left: 5px solid var(--neon-green); padding-left: 1rem; margin-bottom: 2rem;">Terrazzi Bio-diversi</h2>
+            <div class="portfolio-grid">
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800');"></div>
+                    <div class="card-content">
+                        <h3>Roof Garden Salerno</h3>
+                        <p>Trasformazione di un lastrico solare in un polmone verde urbano con fioriere integrate e zona relax.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE: Consulenza -->
+        <section id="consulenza" style="margin-bottom: 5rem; scroll-margin-top: 180px;">
+            <h2 style="color: var(--color-leaf); border-left: 5px solid var(--neon-green); padding-left: 1rem; margin-bottom: 2rem;">Consulenza Agraria</h2>
+            <div class="portfolio-grid">
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=800');"></div>
+                    <div class="card-content">
+                        <h3>Analisi Terreni Cilento</h3>
+                        <p>Servizi di consulenza tecnica per l'ottimizzazione della resa agricola e gestione fitosanitaria.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE: Parchi -->
+        <section id="parchi" style="margin-bottom: 5rem; scroll-margin-top: 180px;">
+            <h2 style="color: var(--color-leaf); border-left: 5px solid var(--neon-green); padding-left: 1rem; margin-bottom: 2rem;">Parchi Pubblici</h2>
+            <div class="portfolio-grid">
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=800');"></div>
+                    <div class="card-content">
+                        <h3>Parco della Memoria</h3>
+                        <p>Riqualificazione area urbana con inserimento di percorsi pedonali e aree ludiche immerse nel verde.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE: Orto -->
+        <section id="orto" style="margin-bottom: 5rem; scroll-margin-top: 180px;">
+            <h2 style="color: var(--color-leaf); border-left: 5px solid var(--neon-green); padding-left: 1rem; margin-bottom: 2rem;">Orto Urbano</h2>
+            <div class="portfolio-grid">
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1416872834464-02f58a167af5?auto=format&fit=crop&q=80&w=800');"></div>
+                    <div class="card-content">
+                        <h3>Community Garden</h3>
+                        <p>Realizzazione di orti didattici e condivisi per promuovere la sostenibilità locale.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const dot = document.querySelector('.cursor-dot');
+        const outline = document.querySelector('.cursor-outline');
+        const header = document.querySelector('header');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX; const posY = e.clientY;
+            dot.style.left = `${posX}px`; dot.style.top = `${posY}px`;
+            outline.animate({ left: `${posX}px`, top: `${posY}px` }, { duration: 400, fill: 'forwards' });
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
+    <footer>
+        <p>&copy; 2026 Davide Belpedio. Tutti i diritti riservati.</p>
+        <div class="designer-signature">
+            Designed by <span class="signature-name">Simona Sceral</span>
+        </div>
+    </footer>
+</body>
+</html>
