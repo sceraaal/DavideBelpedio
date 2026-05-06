@@ -21,7 +21,38 @@
                               url('images/hero-bg.jpg');
             background-size: cover;
             background-attachment: fixed;
+            cursor: none;
         }
+
+        /* CURSORE NEON FIX */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--neon-green);
+            position: fixed;
+            border-radius: 50%;
+            z-index: 10001;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px var(--neon-green);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--neon-green);
+            position: fixed;
+            border-radius: 50%;
+            z-index: 10000;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease-out, opacity 0.3s ease;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+            opacity: 0;
+        }
+
         header:not(.scrolled) .logo-text, header:not(.scrolled) nav ul li a {
             color: var(--text-dark);
         }
@@ -208,6 +239,8 @@
         const dot = document.querySelector('.cursor-dot');
         const outline = document.querySelector('.cursor-outline');
         window.addEventListener('mousemove', (e) => {
+            dot.style.opacity = "1";
+            outline.style.opacity = "1";
             dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
             outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: 'forwards' });
         });

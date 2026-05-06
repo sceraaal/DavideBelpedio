@@ -13,165 +13,247 @@
     <link rel="icon" type="image/jpeg" href="images/fogliaLogo.jpg">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
-    
+
     <!-- STILI SPECIFICI PAGINA -->
     <style>
         body {
             background-color: var(--color-stone);
+            cursor: none;
+            overflow-x: hidden;
         }
-        
+
+        /* HEADER COLOR COHERENCE - TESTO SCURO SU FONDO CHIARO */
+        header:not(.scrolled) .logo-text, 
+        header:not(.scrolled) nav ul li a {
+            color: var(--text-dark) !important;
+            text-shadow: none !important;
+        }
+        header:not(.scrolled) .menu-toggle span {
+            background-color: var(--text-dark) !important;
+        }
+
+        /* CURSORE NEON FIX */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--neon-green);
+            position: fixed;
+            border-radius: 50%;
+            z-index: 10001;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px var(--neon-green);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--neon-green);
+            position: fixed;
+            border-radius: 50%;
+            z-index: 10000;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease-out, opacity 0.3s ease;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+            opacity: 0;
+        }
+
+        /* HERO SECTION CHIARA */
         .portfolio-hero {
             padding: 12rem 2rem 6rem;
             text-align: center;
-            background: linear-gradient(rgba(40, 54, 24, 0.7), rgba(40, 54, 24, 0.7)), 
+            background: linear-gradient(rgba(244, 241, 234, 0.85), rgba(244, 241, 234, 0.85)), 
                         url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: var(--white);
-            margin-bottom: 4rem;
+            color: var(--color-earth);
+            margin-bottom: 2rem;
         }
 
         .portfolio-hero h1 {
             font-size: 4rem;
             margin-bottom: 1.5rem;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            color: var(--color-earth);
         }
 
         .portfolio-hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
-            opacity: 0.9;
+            color: #666;
         }
 
-        .portfolio-section {
-            padding: 8rem 0;
-            overflow: hidden;
-        }
-
-        .portfolio-section:nth-child(even) {
-            background-color: rgba(58, 90, 64, 0.03);
-        }
-
-        .section-container {
+        /* Sezione Icone Cartoon / Categorie Iniziali */
+        .category-icons-section {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 6rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
             padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .category-icon-card {
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 24px;
+            width: 180px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            color: var(--color-earth);
+            border: 2px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .category-icon-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            border-color: var(--neon-green);
+            background-color: var(--white);
+            box-shadow: 0 20px 40px rgba(57, 255, 20, 0.25), 
+                        0 0 20px rgba(57, 255, 20, 0.1);
+        }
+
+        .category-icon-card img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+        }
+
+        .category-icon-card:hover img {
+            transform: rotate(5deg) scale(1.1);
+            filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.5));
+        }
+
+        .category-icon-card span {
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-earth);
+            transition: color 0.3s ease;
+        }
+
+        .category-icon-card:hover span {
+            color: var(--color-leaf);
+        }
+
+        /* Container Progetti */
+        .portfolio-container {
+            max-width: 1100px;
+            margin: 0 auto 8rem;
+            padding: 0 1.5rem;
+        }
+
+        .work-category-group {
+            margin-bottom: 8rem;
+            scroll-margin-top: 120px;
+        }
+
+        .work-category-group h2 {
+            font-size: 2.5rem;
+            color: var(--color-earth);
+            margin-bottom: 3rem;
             display: flex;
             align-items: center;
-            gap: 5rem;
-        }
-
-        .portfolio-section:nth-child(even) .section-container {
-            flex-direction: row-reverse;
-        }
-
-        .section-content {
-            flex: 1;
-        }
-
-        .section-image-wrapper {
-            flex: 1.2;
-            position: relative;
-        }
-
-        .section-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            transition: var(--transition-smooth);
-        }
-
-        .section-image:hover {
-            transform: scale(1.02);
-        }
-
-        .category-label {
-            display: inline-block;
-            color: var(--neon-green);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-content h2 {
-            font-size: 3rem;
-            color: var(--color-earth);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .section-content p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-        }
-
-        .project-preview-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
         }
 
-        .mini-project-card {
+        .work-category-group h2::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: rgba(0,0,0,0.05);
+        }
+
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .work-item-rect {
             background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 20px;
+            padding: 2.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+            border-left: 8px solid var(--color-leaf);
             transition: var(--transition-smooth);
-            border: 1px solid rgba(0,0,0,0.05);
+            gap: 3rem;
         }
 
-        .mini-project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--neon-green);
+        .work-item-rect:hover {
+            transform: translateX(15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+            border-left-color: var(--neon-green);
         }
 
-        .mini-img {
-            height: 150px;
-            background-size: cover;
-            background-position: center;
+        .work-info {
+            flex: 1;
         }
 
-        .mini-info {
-            padding: 1rem;
-        }
-
-        .mini-info h4 {
-            font-size: 1rem;
+        .work-info h3 {
+            font-size: 1.8rem;
             color: var(--color-earth);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.8rem;
         }
 
-        .mini-info span {
-            font-size: 0.8rem;
-            color: #888;
+        .work-info p {
+            color: #666;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            max-width: 650px;
+        }
+
+        .read-more-btn {
+            padding: 1rem 2rem;
+            background: var(--color-earth);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+        }
+
+        .read-more-btn:hover {
+            background: var(--neon-green);
+            color: black;
+            box-shadow: 0 8px 20px rgba(57, 255, 20, 0.4);
+            transform: translateY(-2px);
         }
 
         @media (max-width: 992px) {
-            .section-container {
-                flex-direction: column !important;
-                gap: 3rem;
-                text-align: center;
-            }
-            .section-image {
-                height: 350px;
-            }
-            .section-content h2 {
-                font-size: 2.2rem;
-            }
+            .work-item-rect { padding: 2rem; gap: 1.5rem; }
+            .portfolio-hero h1 { font-size: 3rem; }
         }
 
         @media (max-width: 768px) {
-            .portfolio-hero h1 { font-size: 2.8rem; }
-            .portfolio-section { padding: 4rem 0; }
-            .project-preview-grid { grid-template-columns: 1fr; }
+            .portfolio-hero { padding: 10rem 1.5rem 4rem; }
+            .portfolio-hero h1 { font-size: 2.5rem; }
+            .work-item-rect { flex-direction: column; align-items: flex-start; text-align: left; }
+            .read-more-btn { width: 100%; justify-content: center; }
+            .category-icon-card { width: calc(50% - 1rem); }
         }
     </style>
 </head>
@@ -204,136 +286,147 @@
     <!-- HERO SECTION -->
     <section class="portfolio-hero">
         <div class="reveal">
-            <h1>L'Arte del Verde</h1>
-            <p>Dalla visione alla realtà: esplora come trasformiamo spazi aperti in ecosistemi vibranti e rifugi rigeneranti.</p>
+            <h1>I miei lavori</h1>
+            <p>Un percorso tra natura e design: scopri i progetti realizzati dal Dr. Davide Belpedio.</p>
         </div>
     </section>
 
+    <!-- CATEGORIE INIZIALI (Icone SVG Coerenti e Professionali) -->
+    <div class="category-icons-section">
+        <!-- Giardini Privati: Pianta e Staccionata -->
+        <a href="#giardini" class="category-icon-card reveal">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 40V56M20 40V56M28 40V56M36 40V56M44 40V56M52 40V56" stroke="#3a5a40" stroke-width="2" stroke-linecap="round"/>
+                <path d="M8 44H56M8 52H56" stroke="#3a5a40" stroke-width="2" stroke-linecap="round"/>
+                <path d="M32 40C32 40 24 32 24 24C24 16 32 8 32 8C32 8 40 16 40 24C40 32 32 40 32 40Z" fill="#8ca681" stroke="#3a5a40" stroke-width="2"/>
+            </svg>
+            <span>Giardini Privati</span>
+        </a>
+
+        <!-- Parchi Pubblici: Albero e Panchina -->
+        <a href="#parchi" class="category-icon-card reveal">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 56V48M48 56V48M12 48H52M12 52H52" stroke="#3a5a40" stroke-width="2" stroke-linecap="round"/>
+                <path d="M20 48C20 48 12 36 12 28C12 20 20 12 20 12C20 12 28 20 28 28C28 36 20 48 20 48Z" fill="#8ca681" stroke="#3a5a40" stroke-width="2"/>
+                <circle cx="44" cy="24" r="12" fill="#606c38" opacity="0.6"/>
+            </svg>
+            <span>Parchi Pubblici</span>
+        </a>
+
+        <!-- Terrazzi & Balconi: Pianta in Vaso Moderno -->
+        <a href="#terrazzi" class="category-icon-card reveal">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 40H44L40 56H24L20 40Z" fill="#f4f1ea" stroke="#3a5a40" stroke-width="2"/>
+                <path d="M32 40C32 40 24 30 24 24C24 18 32 12 32 12C32 12 40 18 40 24C40 30 32 40 32 40Z" fill="#8ca681" stroke="#3a5a40" stroke-width="2"/>
+                <path d="M32 40V24" stroke="#3a5a40" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Terrazzi & Balconi</span>
+        </a>
+
+        <!-- Orto Urbano: Cassetta di Ortaggi -->
+        <a href="#orto" class="category-icon-card reveal">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="12" y="40" width="40" height="16" rx="2" stroke="#3a5a40" stroke-width="2"/>
+                <path d="M12 48H52" stroke="#3a5a40" stroke-width="2"/>
+                <circle cx="20" cy="34" r="6" fill="#8ca681" stroke="#3a5a40" stroke-width="2"/>
+                <circle cx="32" cy="34" r="6" fill="#606c38" stroke="#3a5a40" stroke-width="2"/>
+                <circle cx="44" cy="34" r="6" fill="#8ca681" stroke="#3a5a40" stroke-width="2"/>
+            </svg>
+            <span>Orto Urbano</span>
+        </a>
+
+        <!-- Consulenza: Microscopio e Foglia -->
+        <a href="#consulenza" class="category-icon-card reveal">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M44 56H20M32 56V48" stroke="#3a5a40" stroke-width="2" stroke-linecap="round"/>
+                <path d="M24 48H40L36 32H28L24 48Z" stroke="#3a5a40" stroke-width="2"/>
+                <path d="M32 32V16M28 16H36" stroke="#3a5a40" stroke-width="2" stroke-linecap="round"/>
+                <path d="M48 24C48 24 42 18 42 12C42 6 48 2 48 2C48 2 54 6 54 12C54 18 48 24 48 24Z" fill="#neon-green" opacity="0.4" stroke="#3a5a40" stroke-width="1.5"/>
+            </svg>
+            <span>Consulenza</span>
+        </a>
+    </div>
+
     <!-- MAIN CONTENT -->
-    <main>
-        <!-- GIARDINI PRIVATI -->
-        <section class="portfolio-section" id="giardini-privati">
-            <div class="section-container">
-                <div class="section-content reveal-left">
-                    <span class="category-label">Design Residenziale</span>
-                    <h2>Giardini Privati</h2>
-                    <p>Progettazione e realizzazione di spazi verdi esclusivi per abitazioni private. Creiamo armonia tra architettura e natura, trasformando il tuo giardino in un'estensione della tua casa.</p>
-                    
-                    <div class="project-preview-grid">
-                        <div class="mini-project-card">
-                            <div class="mini-img" style="background-image: url('https://images.unsplash.com/photo-1558905619-17254261b646?auto=format&fit=crop&q=80&w=400')"></div>
-                            <div class="mini-info">
-                                <h4>Villa Oasi Verde</h4>
-                                <span>Salerno, 2025</span>
-                            </div>
-                        </div>
-                        <div class="mini-project-card">
-                            <div class="mini-img" style="background-image: url('https://images.unsplash.com/photo-1590010932884-459f71101967?auto=format&fit=crop&q=80&w=400')"></div>
-                            <div class="mini-info">
-                                <h4>Giardino Minimal</h4>
-                                <span>Avellino, 2024</span>
-                            </div>
-                        </div>
+    <main class="portfolio-container">
+        
+        <!-- SEZIONE GIARDINI -->
+        <div class="work-category-group" id="giardini">
+            <h2 class="reveal">Giardini Privati</h2>
+            <div class="projects-list">
+                <div class="work-item-rect reveal">
+                    <div class="work-info">
+                        <h3>Villa Oasi Verde</h3>
+                        <p>Progettazione integrale di un giardino privato con essenze autoctone e sistema di irrigazione domotico.</p>
                     </div>
+                    <a href="#" class="read-more-btn">Leggi di più →</a>
                 </div>
-                <div class="section-image-wrapper reveal">
-                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=1200" alt="Giardino Privato" class="section-image">
+                <div class="work-item-rect reveal">
+                    <div class="work-info">
+                        <h3>Giardino Minimal Zen</h3>
+                        <p>Uno spazio di meditazione ispirato alla filosofia orientale, con uso sapiente di pietre e percorsi d'acqua.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Leggi di più →</a>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- PARCHI PUBBLICI -->
-        <section class="portfolio-section" id="parchi-pubblici">
-            <div class="section-container">
-                <div class="section-content reveal-left">
-                    <span class="category-label">Spazi Comuni</span>
-                    <h2>Parchi Pubblici</h2>
-                    <p>Interventi di riqualificazione urbana e progettazione di parchi orientati alla collettività. Integriamo percorsi pedonali, aree relax e biodiversità per migliorare la vivibilità delle nostre città.</p>
-                    
-                    <div class="project-preview-grid">
-                        <div class="mini-project-card">
-                            <div class="mini-img" style="background-image: url('https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&q=80&w=400')"></div>
-                            <div class="mini-info">
-                                <h4>Parco della Memoria</h4>
-                                <span>Cava de' Tirreni, 2024</span>
-                            </div>
-                        </div>
-                        <div class="mini-project-card">
-                            <div class="mini-img" style="background-image: url('https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?auto=format&fit=crop&q=80&w=400')"></div>
-                            <div class="mini-info">
-                                <h4>Area Ludica Urbana</h4>
-                                <span>Eboli, 2023</span>
-                            </div>
-                        </div>
+        <!-- SEZIONE PARCHI -->
+        <div class="work-category-group" id="parchi">
+            <h2 class="reveal">Parchi Pubblici</h2>
+            <div class="projects-list">
+                <div class="work-item-rect reveal">
+                    <div class="work-info">
+                        <h3>Parco della Memoria</h3>
+                        <p>Riqualificazione di un'area urbana degradata in un centro di aggregazione sociale immerso nel verde.</p>
                     </div>
-                </div>
-                <div class="section-image-wrapper reveal">
-                    <img src="https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&q=80&w=1200" alt="Parco Pubblico" class="section-image">
+                    <a href="#" class="read-more-btn">Leggi di più →</a>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- TERRAZZI E BALCONI -->
-        <section class="portfolio-section" id="terrazzi">
-            <div class="section-container">
-                <div class="section-content reveal-left">
-                    <span class="category-label">Urban Green</span>
-                    <h2>Terrazzi & Balconi</h2>
-                    <p>Il verde non ha limiti di spazio. Progettiamo roof gardens e balconi fioriti con soluzioni tecnologiche avanzate per l'irrigazione e la scelta delle essenze più adatte all'ambiente urbano.</p>
-                    
-                    <div class="project-preview-grid">
-                        <div class="mini-project-card">
-                            <div class="mini-img" style="background-image: url('https://images.unsplash.com/photo-1597047084897-51e81819a499?auto=format&fit=crop&q=80&w=400')"></div>
-                            <div class="mini-info">
-                                <h4>Roof Garden Salerno</h4>
-                                <span>Salerno, 2025</span>
-                            </div>
-                        </div>
-                        <div class="mini-project-card">
-                            <div class="mini-img" style="background-image: url('https://images.unsplash.com/photo-1622397333309-3056849bc70b?auto=format&fit=crop&q=80&w=400')"></div>
-                            <div class="mini-info">
-                                <h4>Balcone Fiorito</h4>
-                                <span>Vietri sul Mare, 2024</span>
-                            </div>
-                        </div>
+        <!-- SEZIONE TERRAZZI -->
+        <div class="work-category-group" id="terrazzi">
+            <h2 class="reveal">Terrazzi & Balconi</h2>
+            <div class="projects-list">
+                <div class="work-item-rect reveal">
+                    <div class="work-info">
+                        <h3>Roof Garden Salerno</h3>
+                        <p>Sfruttamento creativo degli spazi verticali per creare un giardino pensile con vista mare.</p>
                     </div>
-                </div>
-                <div class="section-image-wrapper reveal">
-                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1200" alt="Terrazzo" class="section-image">
+                    <a href="#" class="read-more-btn">Leggi di più →</a>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- CONSULENZA AGRONOMICA -->
-        <section class="portfolio-section" id="consulenza">
-            <div class="section-container">
-                <div class="section-content reveal-left">
-                    <span class="category-label">Technical Expertise</span>
-                    <h2>Consulenza Agronomica</h2>
-                    <p>Supporto tecnico specializzato per la salute del verde. Dalle analisi del terreno alla gestione fitosanitaria, offriamo soluzioni scientifiche per garantire la longevità delle tue piante.</p>
-                    
-                    <div class="project-preview-grid">
-                        <div class="mini-project-card">
-                            <div class="mini-img" style="background-image: url('https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=400')"></div>
-                            <div class="mini-info">
-                                <h4>Analisi Fitopatologica</h4>
-                                <span>Cilento, 2025</span>
-                            </div>
-                        </div>
-                        <div class="mini-project-card">
-                            <div class="mini-img" style="background-image: url('https://images.unsplash.com/photo-1416872834464-02f58a167af5?auto=format&fit=crop&q=80&w=400')"></div>
-                            <div class="mini-info">
-                                <h4>Gestione Orto Urbano</h4>
-                                <span>Battipaglia, 2024</span>
-                            </div>
-                        </div>
+        <!-- SEZIONE ORTO -->
+        <div class="work-category-group" id="orto">
+            <h2 class="reveal">Orto Urbano</h2>
+            <div class="projects-list">
+                <div class="work-item-rect reveal">
+                    <div class="work-info">
+                        <h3>Community Garden Battipaglia</h3>
+                        <p>Un progetto di agricoltura urbana condivisa per promuovere la sostenibilità e la biodiversità locale.</p>
                     </div>
-                </div>
-                <div class="section-image-wrapper reveal">
-                    <img src="https://images.unsplash.com/photo-1599403333735-d72b25ed8a15?auto=format&fit=crop&q=80&w=1200" alt="Consulenza" class="section-image">
+                    <a href="#" class="read-more-btn">Leggi di più →</a>
                 </div>
             </div>
-        </section>
+        </div>
+
+        <!-- SEZIONE CONSULENZA -->
+        <div class="work-category-group" id="consulenza">
+            <h2 class="reveal">Consulenza Agronomica</h2>
+            <div class="projects-list">
+                <div class="work-item-rect reveal">
+                    <div class="work-info">
+                        <h3>Analisi Fitopatologica Cilento</h3>
+                        <p>Servizi tecnici specialistici per la cura e la prevenzione delle malattie delle piante.</p>
+                    </div>
+                    <a href="#" class="read-more-btn">Leggi di più →</a>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- FOOTER -->
@@ -344,7 +437,7 @@
         </div>
     </footer>
 
-    <!-- LOGICA JAVASCRIPT -->
+    <!-- LOGICA JAVASCRIPT UNIFICATA -->
     <script>
         // Toggle Menu Hamburger
         const menuToggle = document.querySelector('.menu-toggle');
@@ -370,6 +463,10 @@
         const dot = document.querySelector('.cursor-dot');
         const outline = document.querySelector('.cursor-outline');
         window.addEventListener('mousemove', (e) => {
+            // Mostra i cursori al primo movimento
+            dot.style.opacity = "1";
+            outline.style.opacity = "1";
+            
             dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
             outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: 'forwards' });
         });

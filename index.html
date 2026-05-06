@@ -27,6 +27,37 @@
     <link rel="icon" type="image/jpeg" href="images/fogliaLogo.jpg">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body { cursor: none; }
+        /* CURSORE NEON FIX */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--neon-green);
+            position: fixed;
+            border-radius: 50%;
+            z-index: 10001;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px var(--neon-green);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--neon-green);
+            position: fixed;
+            border-radius: 50%;
+            z-index: 10000;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease-out, opacity 0.3s ease;
+            box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
     <!-- ELEMENTI DI TRANSIZIONE E CURSORE -->
@@ -243,12 +274,10 @@
         const dot = document.querySelector('.cursor-dot');
         const outline = document.querySelector('.cursor-outline');
         window.addEventListener('mousemove', (e) => {
-            dot.style.left = `${e.clientX}px`;
-            dot.style.top = `${e.clientY}px`;
-            outline.animate({
-                left: `${e.clientX}px`,
-                top: `${e.clientY}px`
-            }, { duration: 500, fill: 'forwards' });
+            dot.style.opacity = "1";
+            outline.style.opacity = "1";
+            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
+            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: 'forwards' });
         });
 
         // Logica Scroll Header e Progress Bar
