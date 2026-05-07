@@ -192,22 +192,30 @@
         <section class="section-portfolio">
             <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
                 <h2 class="reveal" style="font-size: 2.8rem; color: var(--color-earth); margin-bottom: 0.5rem;">Progetti in Evidenza</h2>
-                <p class="reveal" style="color: #666; margin-bottom: 1rem;">Una selezione delle ultime realizzazioni.</p>
+                <p class="reveal" style="color: #666; margin-bottom: 3rem;">Un viaggio attraverso le nostre realizzazioni.</p>
                 
                 <div class="slider-wrapper">
                     <button class="slider-arrow prev" onclick="moveSlider(-1)" aria-label="Progetto precedente">&#10094;</button>
                     <div class="projects-slider-container">
-                        <div class="projects-slider" style="justify-content: flex-start; gap: 0;">
-                            <a href="portfolio.html#giardini-privati" class="project-card">
-                                <img src="https://images.unsplash.com/photo-1558905619-17254261b646?auto=format&fit=crop&q=80&w=800" alt="Giardini Privati">
+                        <div class="projects-slider" id="projects-slider">
+                            <a href="portfolio.html#giardini" class="project-card">
+                                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800" alt="Giardini Privati">
                                 <div class="project-info"><h3>Giardini Privati</h3></div>
                             </a>
-                            <a href="portfolio.html#terrazzi" class="project-card">
-                                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800" alt="Terrazzi">
-                                <div class="project-info"><h3>Terrazzi Bio-diversi</h3></div>
+                            <a href="portfolio.html#parchi" class="project-card">
+                                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=800" alt="Parchi Pubblici">
+                                <div class="project-info"><h3>Parchi Pubblici</h3></div>
                             </a>
-                            <a href="portfolio.html#consulenza" class="project-card active">
-                                <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=800" alt="Consulenza">
+                            <a href="portfolio.html#terrazzi" class="project-card">
+                                <img src="https://images.unsplash.com/photo-1596436805340-ab103a5bb6fe?auto=format&fit=crop&q=80&w=800" alt="Terrazzi & Balconi">
+                                <div class="project-info"><h3>Terrazzi & Balconi</h3></div>
+                            </a>
+                            <a href="portfolio.html#orto" class="project-card">
+                                <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80&w=800" alt="Orto Urbano">
+                                <div class="project-info"><h3>Orto Urbano</h3></div>
+                            </a>
+                            <a href="portfolio.html#consulenza" class="project-card">
+                                <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&q=80&w=800" alt="Consulenza Agraria">
                                 <div class="project-info"><h3>Consulenza Agraria</h3></div>
                             </a>
                         </div>
@@ -292,33 +300,77 @@
             else header.classList.remove('scrolled');
         });
 
-        // Logica Slider Progetti (Portfolio Preview)
-        const slider = document.querySelector('.projects-slider');
-        function moveSlider(direction) {
-            const cards = document.querySelectorAll('.project-card');
-            let activeIndex = Array.from(cards).findIndex(c => c.classList.contains('active'));
-            if (activeIndex === -1) activeIndex = 0;
+        // Logica Slider Progetti (Portfolio Preview) - INFINITE LOOP
+        const slider = document.getElementById('projects-slider');
+        const container = document.querySelector('.projects-slider-container');
+        let cards = Array.from(document.querySelectorAll('.project-card'));
+        let currentIndex = 0;
+        let isMoving = false;
 
-            cards[activeIndex].classList.remove('active');
+        // Inizializzazione: Clona elementi per loop infinito
+        function initSlider() {
+            const firstClone = cards[0].cloneNode(true);
+            const lastClone = cards[cards.length - 1].cloneNode(true);
 
-            let nextIndex = activeIndex + direction;
-            if (nextIndex < 0) nextIndex = cards.length - 1;
-            if (nextIndex >= cards.length) nextIndex = 0;
+            slider.appendChild(firstClone);
+            slider.insertBefore(lastClone, slider.firstChild);
 
-            cards[nextIndex].classList.add('active');
-
-            // Calcolo offset per centrare la card attiva
-            const containerWidth = document.querySelector('.projects-slider-container').offsetWidth;
-            const cardWidth = cards[0].offsetWidth;
-            const offset = (containerWidth / 2) - (cardWidth / 2) - (nextIndex * cardWidth);
-
-            slider.style.transform = `translateX(${offset}px)`;
+            // Aggiorna lista cards dopo clonazione
+            const updatedCards = document.querySelectorAll('.project-card');
+            currentIndex = 1; // Iniziamo dal primo elemento reale (dopo il clone del last)
+            updateSlider(false);
         }
 
-        // Inizializza posizione slider
-        window.addEventListener('load', () => moveSlider(0));
-        window.addEventListener('resize', () => moveSlider(0));
+        function updateSlider(animate = true) {
+            const updatedCards = document.querySelectorAll('.project-card');
+            const cardWidth = updatedCards[0].offsetWidth;
+            const containerWidth = container.offsetWidth;
 
+            if (animate) {
+                slider.style.transition = 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)';
+            } else {
+                slider.style.transition = 'none';
+            }
+
+            // Rimuovi classe active da tutti
+            updatedCards.forEach(c => c.classList.remove('active'));
+
+            // Centratura: l'offset deve posizionare l'elemento currentIndex al centro
+            const offset = (containerWidth / 2) - (cardWidth / 2) - (currentIndex * cardWidth);
+            slider.style.transform = `translateX(${offset}px)`;
+
+            // Aggiungi classe active all'elemento corrente
+            updatedCards[currentIndex].classList.add('active');
+        }
+
+        function moveSlider(direction) {
+            if (isMoving) return;
+            isMoving = true;
+
+            const updatedCards = document.querySelectorAll('.project-card');
+            currentIndex += direction;
+            updateSlider();
+
+            slider.addEventListener('transitionend', () => {
+                isMoving = false;
+                // Gestione loop infinito (teletrasporto silenzioso)
+                if (currentIndex === 0) {
+                    currentIndex = updatedCards.length - 2;
+                    updateSlider(false);
+                } else if (currentIndex === updatedCards.length - 1) {
+                    currentIndex = 1;
+                    updateSlider(false);
+                }
+            }, { once: true });
+        }
+
+        window.addEventListener('load', () => {
+            initSlider();
+        });
+
+        window.addEventListener('resize', () => {
+            updateSlider(false);
+        });
         // Logica Auto-Scroll Orizzontale Servizi + Interazione Manuale
         const servicesWrapper = document.getElementById('services-wrapper');
         const servicesSlider = document.getElementById('services-slider');
