@@ -634,12 +634,15 @@ footer {
         overflow-x: auto !important; 
         -webkit-overflow-scrolling: touch; 
         padding-bottom: 3rem;
+        cursor: grab;
+        scrollbar-width: auto; /* Permetti di vedere lo scroll se necessario su alcuni device */
     }
     .services-slider { 
         flex-direction: row !important; 
         display: flex !important;
         gap: 1.5rem !important;
         padding: 0 1.5rem !important;
+        width: max-content !important;
     }
     .service-modern-card { 
         width: 280px !important; 
@@ -648,8 +651,23 @@ footer {
     }
     .nav-arrow-netflix { display: none !important; }
     
-    .project-card { min-width: 260px; height: 350px; }
-    .slider-arrow { width: 45px; height: 45px; }
+    /* Progetti: Ridimensionamento per responsive */
+    .projects-slider-container {
+        width: 100%;
+    }
+    .project-card { 
+        min-width: 280px; 
+        height: 350px; 
+    }
+    .slider-arrow { 
+        width: 45px; 
+        height: 45px;
+        position: absolute;
+        bottom: -60px; /* Sposta le frecce sotto lo slider su mobile */
+    }
+    .slider-arrow.prev { left: 30%; }
+    .slider-arrow.next { right: 30%; }
+    .slider-wrapper { margin-bottom: 4rem; }
 
     /* Fix per griglie e flex che usano inline styles (tranne quelli orizzontali) */
     [style*="display: grid"]:not(.services-grid), 
@@ -666,4 +684,10 @@ footer {
     .hero h1 { font-size: 2.2rem; }
     .logo-text { font-size: 0.85rem; }
     nav ul { width: 80%; }
+    .project-card { 
+        min-width: 240px; 
+        height: 300px; 
+    }
+    .slider-arrow.prev { left: 20%; }
+    .slider-arrow.next { right: 20%; }
 }

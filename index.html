@@ -194,10 +194,10 @@
                 <h2 class="reveal" style="font-size: 2.8rem; color: var(--color-earth); margin-bottom: 0.5rem;">Progetti in Evidenza</h2>
                 <p class="reveal" style="color: #666; margin-bottom: 3rem;">Un viaggio attraverso le nostre realizzazioni.</p>
                 
-                <div class="slider-wrapper">
+                <div class="slider-wrapper" style="position: relative; overflow: visible;">
                     <button class="slider-arrow prev" onclick="moveSlider(-1)" aria-label="Progetto precedente">&#10094;</button>
-                    <div class="projects-slider-container">
-                        <div class="projects-slider" id="projects-slider">
+                    <div class="projects-slider-container" style="width: 100%; max-width: 100vw;">
+                        <div class="projects-slider" id="projects-slider" style="justify-content: flex-start; gap: 0;">
                             <a href="portfolio.html#giardini" class="project-card">
                                 <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800" alt="Giardini Privati">
                                 <div class="project-info"><h3>Giardini Privati</h3></div>
