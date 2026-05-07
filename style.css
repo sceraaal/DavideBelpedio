@@ -490,8 +490,8 @@ section {
 }
 
 .project-card {
-    min-width: 320px;
-    height: 300px;
+    width: 320px; /* Cambiato da min-width a width fisso per coerenza */
+    height: 320px; /* Altezza uguale alla larghezza per renderlo quadrato */
     background: var(--white);
     border-radius: 20px;
     overflow: hidden;
@@ -658,8 +658,8 @@ footer {
         width: 100%;
     }
     .project-card { 
-        min-width: 280px; 
-        height: 240px; 
+        width: 250px; 
+        height: 250px; 
     }
     .slider-arrow { 
         width: 45px; 
@@ -687,8 +687,8 @@ footer {
     .logo-text { font-size: 0.85rem; }
     nav ul { width: 80%; }
     .project-card { 
-        min-width: 220px; 
-        height: 200px; 
+        width: 220px; 
+        height: 220px; 
     }
     .slider-arrow.prev { left: 20%; }
     .slider-arrow.next { right: 20%; }
