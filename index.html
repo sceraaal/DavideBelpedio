@@ -197,7 +197,7 @@
                 <div class="slider-wrapper">
                     <button class="slider-arrow prev" onclick="moveSlider(-1)" aria-label="Progetto precedente">&#10094;</button>
                     <div class="projects-slider-container">
-                        <div class="projects-slider">
+                        <div class="projects-slider" style="justify-content: flex-start; gap: 0;">
                             <a href="portfolio.html#giardini-privati" class="project-card">
                                 <img src="https://images.unsplash.com/photo-1558905619-17254261b646?auto=format&fit=crop&q=80&w=800" alt="Giardini Privati">
                                 <div class="project-info"><h3>Giardini Privati</h3></div>
@@ -298,17 +298,26 @@
             const cards = document.querySelectorAll('.project-card');
             let activeIndex = Array.from(cards).findIndex(c => c.classList.contains('active'));
             if (activeIndex === -1) activeIndex = 0;
+
             cards[activeIndex].classList.remove('active');
-            
+
             let nextIndex = activeIndex + direction;
             if (nextIndex < 0) nextIndex = cards.length - 1;
             if (nextIndex >= cards.length) nextIndex = 0;
-            
+
             cards[nextIndex].classList.add('active');
+
+            // Calcolo offset per centrare la card attiva
+            const containerWidth = document.querySelector('.projects-slider-container').offsetWidth;
             const cardWidth = cards[0].offsetWidth;
-            const offset = -nextIndex * (cardWidth - (window.innerWidth < 768 ? 20 : 40));
+            const offset = (containerWidth / 2) - (cardWidth / 2) - (nextIndex * cardWidth);
+
             slider.style.transform = `translateX(${offset}px)`;
         }
+
+        // Inizializza posizione slider
+        window.addEventListener('load', () => moveSlider(0));
+        window.addEventListener('resize', () => moveSlider(0));
 
         // Logica Auto-Scroll Orizzontale Servizi + Interazione Manuale
         const servicesWrapper = document.getElementById('services-wrapper');
