@@ -403,6 +403,18 @@
             scrollPos = servicesWrapper.scrollLeft;
         });
 
+        // Gestione Touch per Mobile (evita conflitti con auto-scroll)
+        servicesWrapper.addEventListener('touchstart', () => {
+            isPaused = true;
+        }, { passive: true });
+
+        servicesWrapper.addEventListener('touchend', () => {
+            setTimeout(() => {
+                isPaused = false;
+                scrollPos = servicesWrapper.scrollLeft;
+            }, 2000);
+        }, { passive: true });
+
         servicesWrapper.addEventListener('wheel', (e) => {
             isPaused = true;
             servicesWrapper.scrollLeft += e.deltaX || e.deltaY;

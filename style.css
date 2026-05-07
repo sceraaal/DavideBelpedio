@@ -491,7 +491,7 @@ section {
 
 .project-card {
     min-width: 320px;
-    height: 400px;
+    height: 300px;
     background: var(--white);
     border-radius: 20px;
     overflow: hidden;
@@ -506,7 +506,7 @@ section {
 
 .project-card.active {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.05);
     z-index: 10;
     box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     border: 3px solid var(--neon-green);
@@ -632,10 +632,11 @@ footer {
     /* Servizi: sblocco scroll orizzontale */
     .services-slider-wrapper { 
         overflow-x: auto !important; 
-        -webkit-overflow-scrolling: touch; 
+        -webkit-overflow-scrolling: touch !important; 
         padding-bottom: 3rem;
         cursor: grab;
-        scrollbar-width: auto; /* Permetti di vedere lo scroll se necessario su alcuni device */
+        scrollbar-width: thin;
+        touch-action: pan-x;
     }
     .services-slider { 
         flex-direction: row !important; 
@@ -643,6 +644,7 @@ footer {
         gap: 1.5rem !important;
         padding: 0 1.5rem !important;
         width: max-content !important;
+        pointer-events: auto !important;
     }
     .service-modern-card { 
         width: 280px !important; 
@@ -657,7 +659,7 @@ footer {
     }
     .project-card { 
         min-width: 280px; 
-        height: 350px; 
+        height: 240px; 
     }
     .slider-arrow { 
         width: 45px; 
@@ -685,8 +687,8 @@ footer {
     .logo-text { font-size: 0.85rem; }
     nav ul { width: 80%; }
     .project-card { 
-        min-width: 240px; 
-        height: 300px; 
+        min-width: 220px; 
+        height: 200px; 
     }
     .slider-arrow.prev { left: 20%; }
     .slider-arrow.next { right: 20%; }
