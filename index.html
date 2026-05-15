@@ -55,118 +55,118 @@
         </nav>
     </header>
 
-    <!-- Background Mosaico Dinamico Globale -->
-    <canvas id="mosaic-canvas" class="mosaic-container"></canvas>
-
     <main>
         <!-- SEZIONE HERO -->
         <section class="section-hero">
-            <h1 id="heroHeadline" class="reveal typewriter-text" style="transition-delay: 0.3s;"></h1>
-            <p class="reveal" style="transition-delay: 0.5s;">Studio tecnico di consulenze agrarie e progettazione del verde</p>
-        </section>
-
-        <!-- SEZIONE CHI SONO -->
-        <section class="section-about">
-            <div class="responsive-flex">
-                <div class="reveal-left">
-                    <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=800" alt="Davide Belpedio" style="width: 100%; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.08);">
+            <div class="hero-content-wrapper">
+                <div class="hero-text-side">
+                    <h1 id="heroHeadline" class="reveal typewriter-text"></h1>
+                    <p class="reveal" style="transition-delay: 0.5s;">Studio tecnico di consulenze agrarie e progettazione del verde</p>
+                    <div class="reveal" style="transition-delay: 0.8s; margin-top: 1.2rem;">
+                        <a href="portfolio.html" class="btn">VEDI PROGETTI</a>
+                    </div>
                 </div>
-                <div class="reveal">
-                    <h6 style="color: var(--color-leaf); text-transform: uppercase; letter-spacing: 3px; font-weight: 800; margin-bottom: 1.5rem; font-size: 0.8rem;">L'ESSENZA</h6>
-                    <h2 style="font-size: 3rem; color: var(--color-earth); line-height: 1.2; margin-bottom: 2rem;">Spazi che respirano,<br>tra Scienza e Design</h2>
-                    <p style="color: var(--text-dark); opacity: 0.7; font-size: 1.15rem; margin-bottom: 3rem; line-height: 1.8;">
-                        Come agronomo paesaggista, il mio obiettivo è creare un equilibrio perfetto tra le esigenze tecniche della natura e il desiderio estetico dell'uomo. Trasformiamo la visione in un progetto vivo.
-                    </p>
-                    <a href="about.html" class="animated-link">SCOPRI LA MIA STORIA</a>
+                <div class="hero-logo-side reveal-fade" style="transition-delay: 1.2s;">
+                    <a href="#chi-sono" class="hero-logo-btn" aria-label="Scopri di più su Green Lab">
+                        <img src="images/LOGHI/LOGOgreenLab.jpg" alt="Green Lab Design Logo" class="hero-main-logo">
+                        <div class="logo-pulse"></div>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- SEZIONE SERVIZI (ACCORDION VERTICALE) -->
+        <!-- SEZIONE COLLABORAZIONI ISTITUZIONALI (INFINITE SCROLL) -->
+        <section class="section-collaborations reveal">
+            <div style="text-align: center; padding-bottom: 3rem;">
+                <h6 style="color: var(--color-leaf); letter-spacing: 4px; margin-bottom: 1rem; font-size: 0.8rem; font-weight: 800; text-transform: uppercase;">Public & Private Partners</h6>
+                <h2 style="font-size: 2rem; color: var(--color-earth); font-weight: 800;">Territorio e Istituzioni</h2>
+            </div>
+
+            <div class="logos-slider">
+                <div class="logos-slider-track">
+                    <!-- Prima serie di loghi -->
+                    <div class="logo-slide"><span>Comune di Salerno</span></div>
+                    <div class="logo-slide"><span>Comune di Battipaglia</span></div>
+                    <div class="logo-slide"><span>Comune di Eboli</span></div>
+                    <div class="logo-slide"><span>Comune di Pontecagnano</span></div>
+                    <div class="logo-slide"><span>Comune di Bellizzi</span></div>
+                    <div class="logo-slide"><span>Comune di Baronissi</span></div>
+                    <div class="logo-slide"><span>Comune di Giffoni</span></div>
+                    <div class="logo-slide"><span>Comune di Agropoli</span></div>
+                    <!-- Seconda serie identica per il loop infinito -->
+                    <div class="logo-slide"><span>Comune di Salerno</span></div>
+                    <div class="logo-slide"><span>Comune di Battipaglia</span></div>
+                    <div class="logo-slide"><span>Comune di Eboli</span></div>
+                    <div class="logo-slide"><span>Comune di Pontecagnano</span></div>
+                    <div class="logo-slide"><span>Comune di Bellizzi</span></div>
+                    <div class="logo-slide"><span>Comune di Baronissi</span></div>
+                    <div class="logo-slide"><span>Comune di Giffoni</span></div>
+                    <div class="logo-slide"><span>Comune di Agropoli</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE SERVIZI (MACRO-AREE) -->
         <section class="section-services reveal">
-            <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 0 2rem; margin-bottom: 5rem;">
-                <h6 style="color: var(--color-leaf); letter-spacing: 4px; margin-bottom: 1.5rem; font-size: 0.8rem; font-weight: 800;">COSA OFFRO</h6>
-                <h2 style="font-size: 3.2rem; color: var(--color-earth); font-weight: 800;">I miei Servizi</h2>
+            <div style="max-width: 900px; margin: 0 auto; text-align: center; padding: 0 2rem; margin-bottom: 5rem;">
+                <h6 style="color: var(--color-leaf); letter-spacing: 4px; margin-bottom: 1.5rem; font-size: 0.8rem; font-weight: 800; text-transform: uppercase;">Competenze</h6>
+                <h2 style="font-size: 3rem; color: var(--color-earth); font-weight: 800;">I Pilastri di Green Lab</h2>
                 <div style="width: 60px; height: 3px; background: var(--color-leaf); margin: 2rem auto;"></div>
+                <p style="color: #666; font-size: 1.1rem; line-height: 1.6;">Soluzioni integrate per lo sviluppo del territorio e la valorizzazione del paesaggio.</p>
             </div>
             
-            <div class="services-accordion">
-                <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span class="accordion-title">Progettazione e territorio</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Piani Urbanistici Comunali</li>
-                            <li>Verde pubblico e privato</li>
-                            <li>Impianti serricoli</li>
-                            <li>Irrigazione e idraulica</li>
-                            <li>Realizzazione vigneti</li>
-                        </ul>
-                        <div class="key-message">Progettazione Sostenibile</div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
+                    <h3>Territorio</h3>
+                    <p>Piani urbanistici, analisi pedologiche e gestione strategica del suolo pubblico e privato.</p>
                 </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span class="accordion-title">Consulenza aziendale</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Piani sviluppo aziendale</li>
-                            <li>Consulenze enti pubblici</li>
-                            <li>Censimento arboreo</li>
-                            <li>Capitolati d’appalto</li>
-                            <li>Relazioni climatiche</li>
-                        </ul>
-                        <div class="key-message">Strategia e Gestione</div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
                     </div>
+                    <h3>Design</h3>
+                    <p>Progettazione architettonica del verde, parchi e giardini tra estetica e biodiversità.</p>
                 </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span class="accordion-title">Analisi e sicurezza</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Analisi studi pedologici</li>
-                            <li>Verifiche visive (VTA)</li>
-                            <li>Analisi strumentali</li>
-                        </ul>
-                        <div class="key-message">Salute e Sicurezza</div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
                     </div>
+                    <h3>Consulenza</h3>
+                    <p>Perizie tecniche, censimento arboreo e stime espropriative con rigore scientifico.</p>
                 </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span class="accordion-title">Valutazioni tecniche</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Stime espropriative</li>
-                            <li>Direzione lavori</li>
-                        </ul>
-                        <div class="key-message">Affidabilità Tecnica</div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
+                    <h3>Ambiente</h3>
+                    <p>Valutazione di impatto ambientale, procedure IAP e sicurezza nel settore agricolo.</p>
                 </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 5rem;">
+                <a href="portfolio.html" class="animated-link">APPROFONDISCI TUTTI I SERVIZI</a>
+            </div>
+        </section>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" aria-expanded="false">
-                        <span class="accordion-title">Ambiente e norme</span>
-                        <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                        <ul>
-                            <li>Impatto ambientale (VIA)</li>
-                            <li>Agriturismi e Country House</li>
-                            <li>Procedure per IAP</li>
-                        </ul>
-                        <div class="key-message">Guida Normativa</div>
-                    </div>
+        <!-- SEZIONE CHI SONO (PREVIEW FONDATORE) -->
+        <section id="chi-sono" class="section-about">
+            <div class="responsive-flex">
+                <div class="reveal-left">
+                    <img src="images/LOGHI/avatarDavide.jpg" alt="Davide Belpedio" style="width: 100%; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.08);">
+                </div>
+                <div class="reveal">
+                    <h6 style="color: var(--color-leaf); text-transform: uppercase; letter-spacing: 3px; font-weight: 800; margin-bottom: 1.5rem; font-size: 0.8rem;">IL FONDATORE</h6>
+                    <h2 style="font-size: 3rem; color: var(--color-earth); line-height: 1.2; margin-bottom: 2rem;">Davide Belpedio<br><span style="font-size: 1.5rem; opacity: 0.6;">Dottore Agronomo</span></h2>
+                    <p style="color: var(--text-dark); opacity: 0.7; font-size: 1.15rem; margin-bottom: 3rem; line-height: 1.8;">
+                        La mia visione unisce rigore scientifico e sensibilità estetica. Dietro ogni progetto di Green Lab c'è un impegno costante verso l'eccellenza e la sostenibilità del territorio.
+                    </p>
+                    <a href="about.html" class="animated-link">LA MIA STORIA PROFESSIONALE</a>
                 </div>
             </div>
         </section>
@@ -316,7 +316,7 @@
             });
         }, revealOptions);
 
-        document.querySelectorAll('.reveal, .reveal-left').forEach(el => revealObserver.observe(el));
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-fade').forEach(el => revealObserver.observe(el));
 
         // Logica Scroll Header, Progress Bar e Back to Top
         window.addEventListener('scroll', () => {
@@ -457,89 +457,6 @@
             });
         });
         window.addEventListener('resize', () => updateSlider(false));
-
-        // Logica Mosaico Dinamico (Canvas Version per Performance)
-        function initMosaic() {
-            const canvas = document.getElementById('mosaic-canvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            
-            let width, height, cols, rows;
-            const tileSize = 60; // Dimensione ottimale
-            const shadesOfGreen = [
-                '#1b4332', '#2d6a4f', '#40916c', '#52b788', '#74c69d', 
-                '#95d5b2', '#b7e4c7', '#d8f3dc', '#283618', '#606c38'
-            ];
-
-            let tiles = [];
-
-            function resize() {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-                cols = Math.ceil(width / tileSize);
-                rows = Math.ceil(height / tileSize);
-                
-                tiles = [];
-                for (let r = 0; r < rows; r++) {
-                    for (let c = 0; c < cols; c++) {
-                        tiles.push({
-                            x: c * tileSize,
-                            y: r * tileSize,
-                            colorIndex: Math.floor(Math.random() * shadesOfGreen.length),
-                            nextColorIndex: Math.floor(Math.random() * shadesOfGreen.length),
-                            progress: Math.random(),
-                            speed: 0.005 + Math.random() * 0.01,
-                            offset: (r + c) * 0.1 // Per l'effetto onda
-                        });
-                    }
-                }
-            }
-
-            function animate(time) {
-                ctx.clearRect(0, 0, width, height);
-                
-                const scrollOffset = window.scrollY * 0.2; // Effetto parallasse leggero
-
-                tiles.forEach(tile => {
-                    tile.progress += tile.speed;
-                    if (tile.progress >= 1) {
-                        tile.progress = 0;
-                        tile.colorIndex = tile.nextColorIndex;
-                        tile.nextColorIndex = Math.floor(Math.random() * shadesOfGreen.length);
-                    }
-
-                    // Interpolazione colori
-                    const c1 = hexToRgb(shadesOfGreen[tile.colorIndex]);
-                    const c2 = hexToRgb(shadesOfGreen[tile.nextColorIndex]);
-                    const r = Math.floor(c1.r + (c2.r - c1.r) * tile.progress);
-                    const g = Math.floor(c1.g + (c2.g - c1.g) * tile.progress);
-                    const b = Math.floor(c1.b + (c2.b - c1.b) * tile.progress);
-
-                    // Onda di luminosità diagonale
-                    const wave = Math.sin(time * 0.002 - tile.offset) * 0.1 + 0.9;
-                    
-                    ctx.fillStyle = `rgba(${Math.floor(r * wave)}, ${Math.floor(g * wave)}, ${Math.floor(b * wave)}, 0.8)`;
-                    ctx.fillRect(tile.x, tile.y - (scrollOffset % tileSize), tileSize, tileSize);
-                });
-
-                requestAnimationFrame(animate);
-            }
-
-            function hexToRgb(hex) {
-                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-                return result ? {
-                    r: parseInt(result[1], 16),
-                    g: parseInt(result[2], 16),
-                    b: parseInt(result[3], 16)
-                } : null;
-            }
-
-            window.addEventListener('resize', resize);
-            resize();
-            requestAnimationFrame(animate);
-        }
-
-        window.addEventListener('load', initMosaic);
     </script>
 </body>
 </html>
