@@ -4,74 +4,27 @@
     <!-- CONFIGURAZIONE HEAD -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davide Belpedio | Chi Sono - Esperienza e Professionalità</title>
+    <title>Green Lab Design | Chi Sono - Esperienza e Professionalità</title>
     
     <!-- SEO E META TAGS -->
     <meta name="description" content="Scopri la storia e le qualifiche del Dott. Davide Belpedio, agronomo paesaggista iscritto all'ordine di Salerno.">
     
     <!-- RISORSE ESTERNE -->
-    <link rel="icon" type="image/jpeg" href="images/fogliaLOGO.jpg">
-    <link rel="apple-touch-icon" href="images/fogliaLOGO.jpg">
+    <link rel="icon" type="image/jpeg" href="images/LOGHI/fogliaLOGO.jpg">
+    <link rel="apple-touch-icon" href="images/LOGHI/fogliaLOGO.jpg">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
-    
-    <!-- STILI SPECIFICI PAGINA -->
-    <style>
-        body {
-            background-image: linear-gradient(rgba(244, 241, 234, 0.82), rgba(244, 241, 234, 0.82)), 
-                              url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-attachment: fixed;
-            cursor: none;
-        }
-
-        /* CURSORE NEON FIX */
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--neon-green);
-            position: fixed;
-            border-radius: 50%;
-            z-index: 10001;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 15px var(--neon-green);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .cursor-outline {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--neon-green);
-            position: fixed;
-            border-radius: 50%;
-            z-index: 10000;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: transform 0.15s ease-out, opacity 0.3s ease;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
-            opacity: 0;
-        }
-
-        header:not(.scrolled) .logo-text, header:not(.scrolled) nav ul li a {
-            color: var(--text-dark);
-        }
-        header:not(.scrolled) .menu-toggle span {
-            background-color: var(--text-dark);
-        }
-    </style>
 </head>
 <body>
-    <!-- ELEMENTI DI TRANSIZIONE E CURSORE -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <!-- ELEMENTI DI TRANSIZIONE -->
+    <div class="page-transition"></div>
+    <div class="scroll-progress"></div>
 
     <!-- HEADER E NAVIGAZIONE -->
     <header>
         <nav>
             <a href="index.html" class="logo" aria-label="Torna alla Home">
-                <img src="images/fogliaLOGO.jpg" alt="Logo" class="logo-img">
+                <img src="images/LOGHI/fogliaLOGO.jpg" alt="Logo Davide Belpedio" class="logo-img">
                 <span class="logo-text">Dr. Davide Belpedio</span>
             </a>
             
@@ -89,18 +42,25 @@
     </header>
 
     <!-- CONTENUTO PRINCIPALE -->
-    <main style="max-width: 1200px; margin: 10rem auto 6rem; padding: 0 1.5rem;">
+    <main style="max-width: 1200px; margin: 12rem auto 8rem; padding: 0 1.5rem;">
         <!-- SEZIONE BIOGRAFIA -->
-        <div style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center; justify-content: center;" class="reveal">
-            <div style="flex: 1; min-width: 280px; max-width: 450px;">
+        <div class="responsive-flex">
+            <div class="reveal-left">
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Dott. Davide Belpedio" style="width: 100%; border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); border: 8px solid white;">
             </div>
-            <div style="flex: 1.5; min-width: 280px;">
-                <h1 style="color: var(--color-earth); margin-bottom: 2rem; font-size: calc(1.8rem + 1vw);">Dott. Davide Belpedio<br>Agronomo Paesaggista</h1>
-                <p style="font-size: 1.1rem; color: #432818; line-height: 1.8;">Dottore Regolarmente iscritto con il n°793 all'ordine dei Dottori Agronomi e Forestali della provincia di Salerno e dal collegio dei Periti Agrari Laureati di Salerno al n°902.</p>
-                <div style="margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: flex-start;">
-                    <span style="background: white; color: var(--color-leaf); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: bold; border: 1px solid #e0ddd5; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">Agronomia</span>
-                    <span style="background: white; color: var(--color-leaf); padding: 0.8rem 1.5rem; border-radius: 50px; font-weight: bold; border: 1px solid #e0ddd5; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">Paesaggistica</span>
+            <div class="reveal">
+                <h6 style="color: var(--color-leaf); text-transform: uppercase; letter-spacing: 3px; font-weight: 800; margin-bottom: 1.5rem; font-size: 0.8rem;">PROFILO PROFESSIONALE</h6>
+                <h1 style="color: var(--color-earth); margin-bottom: 2rem; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2;">Dott. Davide Belpedio<br>Agronomo Paesaggista</h1>
+                <p style="font-size: 1.15rem; color: var(--text-dark); opacity: 0.8; line-height: 1.8; margin-bottom: 2rem;">
+                    Dottore Regolarmente iscritto con il n°793 all'ordine dei Dottori Agronomi e Forestali della provincia di Salerno e dal collegio dei Periti Agrari Laureati di Salerno al n°902.
+                </p>
+                <p style="font-size: 1.1rem; color: var(--text-dark); opacity: 0.7; line-height: 1.8; margin-bottom: 3rem;">
+                    Con un approccio che unisce rigore scientifico e visione creativa, mi dedico alla valorizzazione del territorio e alla creazione di spazi verdi che migliorano la qualità della vita e rispettano l'ecosistema.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                    <span style="background: var(--white); color: var(--color-leaf); padding: 0.8rem 1.8rem; border-radius: 50px; font-weight: 800; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 5px 15px rgba(0,0,0,0.03);">Agronomia</span>
+                    <span style="background: var(--white); color: var(--color-leaf); padding: 0.8rem 1.8rem; border-radius: 50px; font-weight: 800; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 5px 15px rgba(0,0,0,0.03);">Paesaggistica</span>
+                    <span style="background: var(--white); color: var(--color-leaf); padding: 0.8rem 1.8rem; border-radius: 50px; font-weight: 800; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 5px 15px rgba(0,0,0,0.03);">Consulenza Tecnica</span>
                 </div>
             </div>
         </div>
@@ -116,7 +76,7 @@
         <div class="footer-container">
             <div class="footer-column reveal">
                 <a href="index.html" class="footer-logo">
-                    <img src="images/fogliaLOGO.jpg" alt="Logo Davide Belpedio">
+                    <img src="images/LOGHI/Davide_Belpedio_logo.png" alt="Green Lab Nero logo">
                     <span class="footer-logo-text">Davide Belpedio</span>
                 </a>
                 <p class="footer-desc">Dottore Agronomo e Paesaggista. Trasformiamo la natura in design attraverso consulenze agronomiche e progettazione del verde professionale.</p>
@@ -127,6 +87,11 @@
                     <a href="https://www.facebook.com/profile.php?id=100054199913680&locale=it_IT" target="_blank" class="footer-social-link" aria-label="Facebook">
                         <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-8.74h-2.94v-3.411h2.94v-2.511c0-2.915 1.781-4.502 4.38-4.502 1.245 0 2.316.093 2.628.134v3.046l-1.803.001c-1.414 0-1.687.672-1.687 1.658v2.174h3.37l-.439 3.411h-2.931v8.74h6.027c.732 0 1.325-.593 1.325-1.324v-21.351c0-.732-.593-1.325-1.325-1.325z"/></svg>
                     </a>
+                </div>
+                <div class="footer-brand-assets">
+                    <p class="footer-brand-text">Brand assets</p>
+                    <a href="images/LOGHI/Green Lab Design logo.pdf" class="footer-logo-download" download>Green Lab Design</a>
+                    <a href="images/LOGHI/Davide Belpedio logo.pdf" class="footer-logo-download" download>Davide Belpedio</a>
                 </div>
             </div>
 
@@ -163,7 +128,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2026 Davide Belpedio. Tutti i diritti riservati.</p>
+            <p>&copy; <span id="currentYear"></span> Davide Belpedio. Tutti i diritti riservati.</p>
             <div class="designer-signature">
                 Designed by <span class="signature-name">Simona Sceral</span>
             </div>
@@ -172,6 +137,12 @@
 
     <!-- LOGICA JAVASCRIPT -->
     <script>
+        // Transizione Pagina al caricamento
+        window.addEventListener('load', () => {
+            document.querySelector('.page-transition').classList.add('active');
+        });
+
+        // Toggle Menu Hamburger
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('#nav-menu');
         menuToggle.addEventListener('click', () => {
@@ -180,6 +151,7 @@
             navMenu.classList.toggle('active');
         });
 
+        // Intersection Observer per animazioni reveal
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -188,37 +160,30 @@
                 }
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        document.querySelectorAll('.reveal, .reveal-left').forEach(el => revealObserver.observe(el));
 
-        const dot = document.querySelector('.cursor-dot');
-        const outline = document.querySelector('.cursor-outline');
-        window.addEventListener('mousemove', (e) => {
-            dot.style.opacity = "1";
-            outline.style.opacity = "1";
-            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
-            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: 'forwards' });
-        });
-
+        // Logica Scroll Header, Progress Bar e Back to Top
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
+            const progress = document.querySelector('.scroll-progress');
             const backToTop = document.getElementById('backToTop');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            if (progress) progress.style.width = `${scrollPercent}%`;
             
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
+            if (header && window.scrollY > 50) header.classList.add('scrolled');
+            else if (header) header.classList.remove('scrolled');
 
-            if (window.scrollY > 500) backToTop.classList.add('visible');
-            else backToTop.classList.remove('visible');
+            if (backToTop && window.scrollY > 500) backToTop.classList.add('visible');
+            else if (backToTop) backToTop.classList.remove('visible');
         });
+
+        // Imposta automaticamente l'anno corrente nel footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // Gestione click Back to Top
         document.getElementById('backToTop').addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
-</body>
-</html>
-remove('scrolled');
         });
     </script>
 </body>

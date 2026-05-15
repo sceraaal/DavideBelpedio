@@ -4,7 +4,7 @@
     <!-- CONFIGURAZIONE HEAD -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davide Belpedio | Agronomo Paesaggista - Natura e Design</title>
+    <title>Green Lab Design | Natura e Design</title>
     
     <!-- SEO E META TAGS -->
     <meta name="description" content="Studio tecnico del Dott. Davide Belpedio. Consulenza agronomica, progettazione del verde e design del paesaggio a Salerno.">
@@ -13,72 +13,37 @@
     <!-- OPEN GRAPH / SOCIAL SHARE -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://davidebelpedio.it/">
-    <meta property="og:title" content="Davide Belpedio | Agronomo Paesaggista">
+    <meta property="og:title" content="Green Lab Design | Natura e Design">
     <meta property="og:description" content="Trasformiamo la natura in design. Progettazione e consulenza agronomica professionale.">
-    <meta property="og:image" content="images/bannerLogo.jpeg">
+    <meta property="og:image" content="images/LOGHI/bannerGreen.png">
 
     <!-- TWITTER CARD -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Davide Belpedio | Agronomo Paesaggista">
+    <meta property="twitter:title" content="Green Lab Design | Natura e Design">
     <meta property="twitter:description" content="Trasformiamo la natura in design. Progettazione e consulenza agronomica professionale.">
-    <meta property="twitter:image" content="images/bannerLogo.jpeg">
+    <meta property="twitter:image" content="images/LOGHI/bannerGreen.png">
 
     <!-- RISORSE ESTERNE -->
-    <link rel="icon" type="image/jpeg" href="images/fogliaLOGO.jpg">
-    <link rel="apple-touch-icon" href="images/fogliaLOGO.jpg">
+    <link rel="icon" type="image/jpeg" href="images/LOGHI/fogliaLOGO.jpg">
+    <link rel="apple-touch-icon" href="images/LOGHI/fogliaLOGO.jpg">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
-    <style>
-        body { cursor: none; }
-        /* CURSORE NEON FIX */
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--neon-green);
-            position: fixed;
-            border-radius: 50%;
-            z-index: 10001;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 15px var(--neon-green);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .cursor-outline {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--neon-green);
-            position: fixed;
-            border-radius: 50%;
-            z-index: 10000;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: transform 0.15s ease-out, opacity 0.3s ease;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
-            opacity: 0;
-        }
-    </style>
 </head>
 <body>
-    <!-- ELEMENTI DI TRANSIZIONE E CURSORE -->
+    <!-- ELEMENTI DI TRANSIZIONE -->
     <div class="page-transition"></div>
     <div class="scroll-progress"></div>
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
 
     <!-- HEADER E NAVIGAZIONE -->
     <header>
         <nav>
             <a href="index.html" class="logo" aria-label="Torna alla Home">
-                <img src="images/fogliaLOGO.jpg" alt="Logo Davide Belpedio" class="logo-img">
-                <span class="logo-text">Dr. Davide Belpedio</span>
+                <img src="images/LOGHI/fogliaLOGO.jpg" alt="Logo Davide Belpedio" class="logo-img">
+                <span class="logo-text">Green Lab Design | Dr. Davide Belpedio</span>
             </a>
             
             <button class="menu-toggle" aria-label="Apri menu di navigazione" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
 
             <ul id="nav-menu">
@@ -90,99 +55,117 @@
         </nav>
     </header>
 
+    <!-- Background Mosaico Dinamico Globale -->
+    <canvas id="mosaic-canvas" class="mosaic-container"></canvas>
+
     <main>
         <!-- SEZIONE HERO -->
-        <section class="hero section-hero">
-            <div class="hero-image-container">
-                <img src="images/bannerLogo.jpeg" alt="Davide Belpedio Logo" class="hero-image">
-            </div>
-            <h1 class="reveal">Natura, Progettazione<br>e Design</h1>
-            <p style="color: rgba(255,255,255,0.9); font-size: 1.4rem; max-width: 750px; margin: 0 auto; letter-spacing: 1px;" class="reveal">Studio tecnico di consulenze agrarie e progettazione del verde</p>
+        <section class="section-hero">
+            <h1 id="heroHeadline" class="reveal typewriter-text" style="transition-delay: 0.3s;"></h1>
+            <p class="reveal" style="transition-delay: 0.5s;">Studio tecnico di consulenze agrarie e progettazione del verde</p>
         </section>
 
         <!-- SEZIONE CHI SONO -->
         <section class="section-about">
-            <div style="max-width: 1000px; margin: 0 auto; display: flex; align-items: center; gap: 4rem; flex-wrap: wrap; justify-content: center;" class="responsive-flex">
-                <div style="flex: 1; min-width: 280px; max-width: 400px;" class="reveal">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" alt="Davide Belpedio" style="width: 100%; border-radius: 10px; box-shadow: 15px 15px 0 var(--color-stone);">
+            <div class="responsive-flex">
+                <div class="reveal-left">
+                    <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=800" alt="Davide Belpedio" style="width: 100%; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.08);">
                 </div>
-                <div style="flex: 1.5; min-width: 280px;" class="reveal">
-                    <h6 style="color: var(--color-leaf); text-transform: uppercase; letter-spacing: 3px; font-weight: 800; margin-bottom: 0.8rem; font-size: 0.8rem;">L'ESSENZA</h6>
-                    <h2 style="font-size: 2.5rem; color: var(--color-earth); line-height: 1.2; margin-bottom: 1.5rem;">Spazi che respirano,<br>tra Scienza e Design</h2>
-                    <p style="color: #666; margin-bottom: 2rem; max-width: 450px;">Come agronomo paesaggista, il mio obiettivo è creare un equilibrio perfetto tra le esigenze tecniche della natura e il desiderio estetico dell'uomo.</p>
-                    <a href="about.html" class="animated-link" aria-label="Scopri di più su Davide Belpedio">SCOPRI LA MIA STORIA</a>
+                <div class="reveal">
+                    <h6 style="color: var(--color-leaf); text-transform: uppercase; letter-spacing: 3px; font-weight: 800; margin-bottom: 1.5rem; font-size: 0.8rem;">L'ESSENZA</h6>
+                    <h2 style="font-size: 3rem; color: var(--color-earth); line-height: 1.2; margin-bottom: 2rem;">Spazi che respirano,<br>tra Scienza e Design</h2>
+                    <p style="color: var(--text-dark); opacity: 0.7; font-size: 1.15rem; margin-bottom: 3rem; line-height: 1.8;">
+                        Come agronomo paesaggista, il mio obiettivo è creare un equilibrio perfetto tra le esigenze tecniche della natura e il desiderio estetico dell'uomo. Trasformiamo la visione in un progetto vivo.
+                    </p>
+                    <a href="about.html" class="animated-link">SCOPRI LA MIA STORIA</a>
                 </div>
             </div>
         </section>
 
-        <!-- SEZIONE SERVIZI (AUTO-SCROLL) -->
-        <section class="section-services reveal" style="padding: 8rem 0; background: #fcf7ec; position: relative; overflow: hidden;">
-            <div style="max-width: 100%; margin: 0 auto; position: relative; z-index: 2;">
-                <div style="margin-bottom: 4rem; text-align: center; padding: 0 2rem;">
-                    <h6 style="color: var(--color-leaf); letter-spacing: 4px; margin-bottom: 1rem;">COSA OFFRO</h6>
-                    <h2 style="font-family: 'Georgia', serif; font-size: 3.2rem; color: var(--color-earth);">I miei Servizi</h2>
-                    <div style="width: 60px; height: 3px; background: var(--neon-green); margin: 2rem auto;"></div>
+        <!-- SEZIONE SERVIZI (ACCORDION VERTICALE) -->
+        <section class="section-services reveal">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 0 2rem; margin-bottom: 5rem;">
+                <h6 style="color: var(--color-leaf); letter-spacing: 4px; margin-bottom: 1.5rem; font-size: 0.8rem; font-weight: 800;">COSA OFFRO</h6>
+                <h2 style="font-size: 3.2rem; color: var(--color-earth); font-weight: 800;">I miei Servizi</h2>
+                <div style="width: 60px; height: 3px; background: var(--color-leaf); margin: 2rem auto;"></div>
+            </div>
+            
+            <div class="services-accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Progettazione e territorio</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Piani Urbanistici Comunali</li>
+                            <li>Verde pubblico e privato</li>
+                            <li>Impianti serricoli</li>
+                            <li>Irrigazione e idraulica</li>
+                            <li>Realizzazione vigneti</li>
+                        </ul>
+                        <div class="key-message">Progettazione Sostenibile</div>
+                    </div>
                 </div>
-                
-                <div class="services-container-main" style="position: relative;">
-                    <button class="nav-arrow-netflix left" onclick="scrollServices(-400)" aria-label="Scorri a sinistra">&#10094;</button>
-                    <button class="nav-arrow-netflix right" onclick="scrollServices(400)" aria-label="Scorri a destra">&#10095;</button>
 
-                    <div class="services-slider-wrapper" id="services-wrapper">
-                        <div class="services-slider" id="services-slider">
-                            <div class="service-modern-card">
-                                <h3>Progettazione e sviluppo territorio</h3>
-                                <ul>
-                                    <li>Piani Urbanistici Comunali</li>
-                                    <li>Verde pubblico e privato</li>
-                                    <li>Impianti serricoli</li>
-                                    <li>Irrigazione e idraulica</li>
-                                    <li>Realizzazione vigneti</li>
-                                </ul>
-                                <div class="key-message">Progettazione Sostenibile</div>
-                            </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Consulenza aziendale</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Piani sviluppo aziendale</li>
+                            <li>Consulenze enti pubblici</li>
+                            <li>Censimento arboreo</li>
+                            <li>Capitolati d’appalto</li>
+                            <li>Relazioni climatiche</li>
+                        </ul>
+                        <div class="key-message">Strategia e Gestione</div>
+                    </div>
+                </div>
 
-                            <div class="service-modern-card">
-                                <h3>Consulenza agronomica e aziendale</h3>
-                                <ul>
-                                    <li>Piani sviluppo aziendale</li>
-                                    <li>Consulenze enti pubblici</li>
-                                    <li>Censimento arboreo</li>
-                                    <li>Capitolati d’appalto</li>
-                                    <li>Relazioni climatiche</li>
-                                </ul>
-                                <div class="key-message">Strategia e Gestione</div>
-                            </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Analisi e sicurezza</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Analisi studi pedologici</li>
+                            <li>Verifiche visive (VTA)</li>
+                            <li>Analisi strumentali</li>
+                        </ul>
+                        <div class="key-message">Salute e Sicurezza</div>
+                    </div>
+                </div>
 
-                            <div class="service-modern-card">
-                                <h3>Analisi, controlli e sicurezza</h3>
-                                <ul>
-                                    <li>Analisi studi pedologici</li>
-                                    <li>Verifiche visive (VTA)</li>
-                                    <li>Analisi strumentali avanzate</li>
-                                </ul>
-                                <div class="key-message">Salute e Sicurezza</div>
-                            </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Valutazioni tecniche</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Stime espropriative</li>
+                            <li>Direzione lavori</li>
+                        </ul>
+                        <div class="key-message">Affidabilità Tecnica</div>
+                    </div>
+                </div>
 
-                            <div class="service-modern-card">
-                                <h3>Valutazioni tecniche ed economiche</h3>
-                                <ul>
-                                    <li>Stime espropriative</li>
-                                    <li>Direzione lavori</li>
-                                </ul>
-                                <div class="key-message">Affidabilità Tecnica</div>
-                            </div>
-
-                            <div class="service-modern-card">
-                                <h3>Ambiente e autorizzazioni</h3>
-                                <ul>
-                                    <li>Impatto ambientale (VIA, VAS)</li>
-                                    <li>Agriturismi e Country House</li>
-                                    <li>Procedure per IAP</li>
-                                </ul>
-                                <div class="key-message">Guida Normativa</div>
-                            </div>
-                        </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Ambiente e norme</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li>Impatto ambientale (VIA)</li>
+                            <li>Agriturismi e Country House</li>
+                            <li>Procedure per IAP</li>
+                        </ul>
+                        <div class="key-message">Guida Normativa</div>
                     </div>
                 </div>
             </div>
@@ -194,10 +177,10 @@
                 <h2 class="reveal" style="font-size: 2.8rem; color: var(--color-earth); margin-bottom: 0.5rem;">Progetti in Evidenza</h2>
                 <p class="reveal" style="color: #666; margin-bottom: 3rem;">Un viaggio attraverso le nostre realizzazioni.</p>
                 
-                <div class="slider-wrapper" style="position: relative; overflow: visible;">
+                <div class="slider-wrapper">
                     <button class="slider-arrow prev" onclick="moveSlider(-1)" aria-label="Progetto precedente">&#10094;</button>
-                    <div class="projects-slider-container" style="width: 100%; max-width: 100vw;">
-                        <div class="projects-slider" id="projects-slider" style="justify-content: flex-start; gap: 0;">
+                    <div class="projects-slider-container">
+                        <div class="projects-slider" id="projects-slider">
                             <a href="portfolio.html#giardini" class="project-card">
                                 <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=800" alt="Giardini Privati">
                                 <div class="project-info"><h3>Giardini Privati</h3></div>
@@ -226,10 +209,10 @@
         </section>
 
         <!-- SEZIONE CTA -->
-        <section class="section-cta" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/prato2.jpg'); background-size: cover; background-attachment: fixed; color: white; text-align: center; padding: 6rem 1.5rem;">
+        <section class="section-cta" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/prato2.jpg');">
             <div class="reveal">
                 <h2 style="font-size: 3rem; margin-bottom: 2rem;">Hai una visione?<br>Rendiamola viva.</h2>
-                <a href="contacts.html" class="btn" style="background: var(--neon-green); color: black; padding: 1.2rem 3.5rem; text-decoration: none; font-weight: 800; border-radius: 50px;" aria-label="Contatta Davide Belpedio">CONTATTAMI ORA</a>
+                <a href="contacts.html" class="btn" aria-label="Contatta Davide Belpedio">CONTATTAMI ORA</a>
             </div>
         </section>
     </main>
@@ -244,7 +227,7 @@
         <div class="footer-container">
             <div class="footer-column reveal">
                 <a href="index.html" class="footer-logo">
-                    <img src="images/fogliaLOGO.jpg" alt="Logo Davide Belpedio">
+                    <img src="images/LOGHI/Davide_Belpedio_logo.png" alt="Green Lab Nero logo">
                     <span class="footer-logo-text">Davide Belpedio</span>
                 </a>
                 <p class="footer-desc">Dottore Agronomo e Paesaggista. Trasformiamo la natura in design attraverso consulenze agronomiche e progettazione del verde professionale.</p>
@@ -335,29 +318,19 @@
 
         document.querySelectorAll('.reveal, .reveal-left').forEach(el => revealObserver.observe(el));
 
-        // Gestione movimento cursore personalizzato
-        const dot = document.querySelector('.cursor-dot');
-        const outline = document.querySelector('.cursor-outline');
-        window.addEventListener('mousemove', (e) => {
-            dot.style.opacity = "1";
-            outline.style.opacity = "1";
-            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
-            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: 'forwards' });
-        });
-
         // Logica Scroll Header, Progress Bar e Back to Top
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             const progress = document.querySelector('.scroll-progress');
             const backToTop = document.getElementById('backToTop');
             const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            progress.style.width = `${scrollPercent}%`;
+            if (progress) progress.style.width = `${scrollPercent}%`;
             
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
+            if (header && window.scrollY > 50) header.classList.add('scrolled');
+            else if (header) header.classList.remove('scrolled');
 
-            if (window.scrollY > 500) backToTop.classList.add('visible');
-            else backToTop.classList.remove('visible');
+            if (backToTop && window.scrollY > 500) backToTop.classList.add('visible');
+            else if (backToTop) backToTop.classList.remove('visible');
         });
 
         // Gestione click Back to Top
@@ -373,53 +346,36 @@
         let currentIndex = 0;
         let isMoving = false;
 
-        // Inizializzazione: Clona elementi per loop infinito
         function initSlider() {
+            if (!slider) return;
             const firstClone = cards[0].cloneNode(true);
             const lastClone = cards[cards.length - 1].cloneNode(true);
-
             slider.appendChild(firstClone);
             slider.insertBefore(lastClone, slider.firstChild);
-
-            // Aggiorna lista cards dopo clonazione
-            const updatedCards = document.querySelectorAll('.project-card');
-            currentIndex = 1; // Iniziamo dal primo elemento reale (dopo il clone del last)
+            currentIndex = 1;
             updateSlider(false);
         }
 
         function updateSlider(animate = true) {
+            if (!slider) return;
             const updatedCards = document.querySelectorAll('.project-card');
             const cardWidth = updatedCards[0].offsetWidth;
             const containerWidth = container.offsetWidth;
-
-            if (animate) {
-                slider.style.transition = 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)';
-            } else {
-                slider.style.transition = 'none';
-            }
-
-            // Rimuovi classe active da tutti
+            slider.style.transition = animate ? 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)' : 'none';
             updatedCards.forEach(c => c.classList.remove('active'));
-
-            // Centratura: l'offset deve posizionare l'elemento currentIndex al centro
             const offset = (containerWidth / 2) - (cardWidth / 2) - (currentIndex * cardWidth);
             slider.style.transform = `translateX(${offset}px)`;
-
-            // Aggiungi classe active all'elemento corrente
             updatedCards[currentIndex].classList.add('active');
         }
 
         function moveSlider(direction) {
-            if (isMoving) return;
+            if (isMoving || !slider) return;
             isMoving = true;
-
             const updatedCards = document.querySelectorAll('.project-card');
             currentIndex += direction;
             updateSlider();
-
             slider.addEventListener('transitionend', () => {
                 isMoving = false;
-                // Gestione loop infinito (teletrasporto silenzioso)
                 if (currentIndex === 0) {
                     currentIndex = updatedCards.length - 2;
                     updateSlider(false);
@@ -430,79 +386,160 @@
             }, { once: true });
         }
 
+        // Logica Auto-Scroll Orizzontale Servizi - RIMOSSA (ora griglia statica)
+
+        window.addEventListener('load', initSlider);
         window.addEventListener('load', () => {
-            initSlider();
-        });
+            const heroHeadline = document.getElementById('heroHeadline');
+            const heroTextSegments = ['Green Lab', 'Design'];
+            const typingSpeed = 80;
 
-        window.addEventListener('resize', () => {
-            updateSlider(false);
-        });
-        // Logica Auto-Scroll Orizzontale Servizi + Interazione Manuale
-        const servicesWrapper = document.getElementById('services-wrapper');
-        const servicesSlider = document.getElementById('services-slider');
-        
-        const originalCards = Array.from(servicesSlider.children);
-        originalCards.forEach(card => {
-            const clone = card.cloneNode(true);
-            servicesSlider.appendChild(clone);
-        });
+            function typeHeroText(segments, element, index = 0, charIndex = 0) {
+                if (!element) return;
+                if (index >= segments.length) return;
 
-        let scrollPos = 0;
-        let isPaused = false;
-        let autoScrollId;
-        const scrollSpeed = 0.8;
-
-        function startAutoScroll() {
-            if (!isPaused) {
-                scrollPos += scrollSpeed;
-                if (scrollPos >= servicesSlider.scrollWidth / 2) {
-                    scrollPos = 0;
+                const segment = segments[index];
+                if (charIndex < segment.length) {
+                    element.innerHTML += segment[charIndex];
+                    setTimeout(() => typeHeroText(segments, element, index, charIndex + 1), typingSpeed);
+                } else {
+                    index += 1;
+                    if (index < segments.length) {
+                        element.innerHTML += ' '; // Rimosso <br> per tenere tutto su una riga
+                        setTimeout(() => typeHeroText(segments, element, index, 0), typingSpeed);
+                    }
                 }
-                servicesWrapper.scrollLeft = scrollPos;
             }
-            autoScrollId = requestAnimationFrame(startAutoScroll);
-        }
 
-        servicesWrapper.addEventListener('mouseenter', () => isPaused = true);
-        servicesWrapper.addEventListener('mouseleave', () => {
-            isPaused = false;
-            scrollPos = servicesWrapper.scrollLeft;
+            typeHeroText(heroTextSegments, heroHeadline);
         });
 
-        // Gestione Touch per Mobile (evita conflitti con auto-scroll)
-        servicesWrapper.addEventListener('touchstart', () => {
-            isPaused = true;
-        }, { passive: true });
+        // Accordion Functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            // Click to toggle
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                    header.setAttribute('aria-expanded', 'true');
+                }
+            });
 
-        servicesWrapper.addEventListener('touchend', () => {
-            setTimeout(() => {
-                isPaused = false;
-                scrollPos = servicesWrapper.scrollLeft;
-            }, 2000);
-        }, { passive: true });
+            // Hover to expand
+            header.addEventListener('mouseenter', () => {
+                const item = header.parentElement;
+                // Close others
+                document.querySelectorAll('.accordion-item').forEach(i => {
+                    if (i !== item) {
+                        i.classList.remove('active');
+                        i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                    }
+                });
+                // Open this one
+                item.classList.add('active');
+                header.setAttribute('aria-expanded', 'true');
+            });
 
-        servicesWrapper.addEventListener('wheel', (e) => {
-            isPaused = true;
-            servicesWrapper.scrollLeft += e.deltaX || e.deltaY;
-            scrollPos = servicesWrapper.scrollLeft;
+            // Close on mouseleave
+            header.addEventListener('mouseleave', () => {
+                const item = header.parentElement;
+                item.classList.remove('active');
+                header.setAttribute('aria-expanded', 'false');
+            });
+        });
+        window.addEventListener('resize', () => updateSlider(false));
+
+        // Logica Mosaico Dinamico (Canvas Version per Performance)
+        function initMosaic() {
+            const canvas = document.getElementById('mosaic-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
             
-            clearTimeout(window.resumeScrollTimer);
-            window.resumeScrollTimer = setTimeout(() => {
-                if (!servicesWrapper.matches(':hover')) isPaused = false;
-            }, 2000);
-        }, { passive: true });
+            let width, height, cols, rows;
+            const tileSize = 60; // Dimensione ottimale
+            const shadesOfGreen = [
+                '#1b4332', '#2d6a4f', '#40916c', '#52b788', '#74c69d', 
+                '#95d5b2', '#b7e4c7', '#d8f3dc', '#283618', '#606c38'
+            ];
 
-        function scrollServices(amount) {
-            isPaused = true;
-            servicesWrapper.scrollBy({ left: amount, behavior: 'smooth' });
-            
-            setTimeout(() => {
-                scrollPos = servicesWrapper.scrollLeft;
-                if (!servicesWrapper.matches(':hover')) isPaused = false;
-            }, 1000);
+            let tiles = [];
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+                cols = Math.ceil(width / tileSize);
+                rows = Math.ceil(height / tileSize);
+                
+                tiles = [];
+                for (let r = 0; r < rows; r++) {
+                    for (let c = 0; c < cols; c++) {
+                        tiles.push({
+                            x: c * tileSize,
+                            y: r * tileSize,
+                            colorIndex: Math.floor(Math.random() * shadesOfGreen.length),
+                            nextColorIndex: Math.floor(Math.random() * shadesOfGreen.length),
+                            progress: Math.random(),
+                            speed: 0.005 + Math.random() * 0.01,
+                            offset: (r + c) * 0.1 // Per l'effetto onda
+                        });
+                    }
+                }
+            }
+
+            function animate(time) {
+                ctx.clearRect(0, 0, width, height);
+                
+                const scrollOffset = window.scrollY * 0.2; // Effetto parallasse leggero
+
+                tiles.forEach(tile => {
+                    tile.progress += tile.speed;
+                    if (tile.progress >= 1) {
+                        tile.progress = 0;
+                        tile.colorIndex = tile.nextColorIndex;
+                        tile.nextColorIndex = Math.floor(Math.random() * shadesOfGreen.length);
+                    }
+
+                    // Interpolazione colori
+                    const c1 = hexToRgb(shadesOfGreen[tile.colorIndex]);
+                    const c2 = hexToRgb(shadesOfGreen[tile.nextColorIndex]);
+                    const r = Math.floor(c1.r + (c2.r - c1.r) * tile.progress);
+                    const g = Math.floor(c1.g + (c2.g - c1.g) * tile.progress);
+                    const b = Math.floor(c1.b + (c2.b - c1.b) * tile.progress);
+
+                    // Onda di luminosità diagonale
+                    const wave = Math.sin(time * 0.002 - tile.offset) * 0.1 + 0.9;
+                    
+                    ctx.fillStyle = `rgba(${Math.floor(r * wave)}, ${Math.floor(g * wave)}, ${Math.floor(b * wave)}, 0.8)`;
+                    ctx.fillRect(tile.x, tile.y - (scrollOffset % tileSize), tileSize, tileSize);
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            function hexToRgb(hex) {
+                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                return result ? {
+                    r: parseInt(result[1], 16),
+                    g: parseInt(result[2], 16),
+                    b: parseInt(result[3], 16)
+                } : null;
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+            requestAnimationFrame(animate);
         }
 
-        startAutoScroll();
+        window.addEventListener('load', initMosaic);
     </script>
 </body>
 </html>

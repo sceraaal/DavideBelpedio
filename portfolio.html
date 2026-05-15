@@ -4,276 +4,27 @@
     <!-- CONFIGURAZIONE HEAD -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davide Belpedio | Portfolio - Realizzazioni e Progetti</title>
+    <title>Green Lab Design | Portfolio - Realizzazioni e Progetti</title>
     
     <!-- SEO E META TAGS -->
     <meta name="description" content="Esplora il portfolio del Dott. Davide Belpedio: dai giardini privati ai parchi pubblici, soluzioni di design e agronomia.">
     
     <!-- RISORSE ESTERNE -->
-    <link rel="icon" type="image/jpeg" href="images/fogliaLOGO.jpg">
-    <link rel="apple-touch-icon" href="images/fogliaLOGO.jpg">
+    <link rel="icon" type="image/jpeg" href="images/LOGHI/fogliaLOGO.jpg">
+    <link rel="apple-touch-icon" href="images/LOGHI/fogliaLOGO.jpg">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
-
-    <!-- STILI SPECIFICI PAGINA -->
-    <style>
-        body {
-            background-color: var(--color-stone);
-            cursor: none;
-            overflow-x: hidden;
-        }
-
-        /* HEADER COLOR COHERENCE - TESTO SCURO SU FONDO CHIARO */
-        header:not(.scrolled) .logo-text, 
-        header:not(.scrolled) nav ul li a {
-            color: var(--text-dark) !important;
-            text-shadow: none !important;
-        }
-        header:not(.scrolled) .menu-toggle span {
-            background-color: var(--text-dark) !important;
-        }
-
-        /* CURSORE NEON FIX */
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--neon-green);
-            position: fixed;
-            border-radius: 50%;
-            z-index: 10001;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 15px var(--neon-green);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .cursor-outline {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--neon-green);
-            position: fixed;
-            border-radius: 50%;
-            z-index: 10000;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: transform 0.15s ease-out, opacity 0.3s ease;
-            box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
-            opacity: 0;
-        }
-
-        /* HERO SECTION CHIARA */
-        .portfolio-hero {
-            padding: 12rem 2rem 6rem;
-            text-align: center;
-            background: linear-gradient(rgba(244, 241, 234, 0.85), rgba(244, 241, 234, 0.85)), 
-                        url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--color-earth);
-            margin-bottom: 2rem;
-        }
-
-        .portfolio-hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-earth);
-        }
-
-        .portfolio-hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            color: #666;
-        }
-
-        /* Sezione Icone Cartoon / Categorie Iniziali */
-        .category-icons-section {
-            max-width: 1200px;
-            margin: 0 auto 6rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            padding: 0 1.5rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .category-icon-card {
-            background: white;
-            padding: 2rem 1.5rem;
-            border-radius: 24px;
-            width: 180px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-decoration: none;
-            color: var(--color-earth);
-            border: 2px solid rgba(0,0,0,0.03);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .category-icon-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            border-color: var(--neon-green);
-            background-color: var(--white);
-            box-shadow: 0 20px 40px rgba(57, 255, 20, 0.25), 
-                        0 0 20px rgba(57, 255, 20, 0.1);
-        }
-
-        .category-icon-card img {
-            width: 70px;
-            height: 70px;
-            object-fit: contain;
-            transition: transform 0.5s ease;
-            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
-        }
-
-        .category-icon-card:hover img {
-            transform: rotate(5deg) scale(1.1);
-            filter: drop-shadow(0 0 10px rgba(57, 255, 20, 0.5));
-        }
-
-        .category-icon-card span {
-            font-weight: 800;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--color-earth);
-            transition: color 0.3s ease;
-        }
-
-        .category-icon-card:hover span {
-            color: var(--color-leaf);
-        }
-
-        /* Container Progetti */
-        .portfolio-container {
-            max-width: 1100px;
-            margin: 0 auto 8rem;
-            padding: 0 1.5rem;
-        }
-
-        .work-category-group {
-            margin-bottom: 8rem;
-            scroll-margin-top: 120px;
-        }
-
-        .work-category-group h2 {
-            font-size: 2.5rem;
-            color: var(--color-earth);
-            margin-bottom: 3rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .work-category-group h2::after {
-            content: '';
-            flex: 1;
-            height: 2px;
-            background: rgba(0,0,0,0.05);
-        }
-
-        .projects-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .work-item-rect {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.02);
-            border-left: 8px solid var(--color-leaf);
-            transition: var(--transition-smooth);
-            gap: 3rem;
-        }
-
-        .work-item-rect:hover {
-            transform: translateX(15px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-            border-left-color: var(--neon-green);
-        }
-
-        .work-info {
-            flex: 1;
-        }
-
-        .work-info h3 {
-            font-size: 1.8rem;
-            color: var(--color-earth);
-            margin-bottom: 0.8rem;
-        }
-
-        .work-info p {
-            color: #666;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            max-width: 650px;
-        }
-
-        .read-more-btn {
-            padding: 1rem 2rem;
-            background: var(--color-earth);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            transition: var(--transition-smooth);
-            white-space: nowrap;
-        }
-
-        .read-more-btn:hover {
-            background: var(--neon-green);
-            color: black;
-            box-shadow: 0 8px 20px rgba(57, 255, 20, 0.4);
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 992px) {
-            .work-item-rect { padding: 2rem; gap: 1.5rem; }
-            .portfolio-hero h1 { font-size: 3rem; }
-        }
-
-        @media (max-width: 768px) {
-            .portfolio-hero { padding: 10rem 1.5rem 4rem; }
-            .portfolio-hero h1 { font-size: 2.5rem; }
-            .work-item-rect { flex-direction: column; align-items: flex-start; text-align: left; }
-            .read-more-btn { width: 100%; justify-content: center; }
-            .category-icon-card { width: calc(50% - 1rem); }
-            
-            /* FIX LINK MOBILE MENU - BIANCHI SU FONDO DARK */
-            header:not(.scrolled) nav ul li a,
-            nav ul li a {
-                color: var(--white) !important;
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- ELEMENTI DI TRANSIZIONE E CURSORE -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <!-- ELEMENTI DI TRANSIZIONE -->
+    <div class="page-transition"></div>
+    <div class="scroll-progress"></div>
 
     <!-- HEADER E NAVIGAZIONE -->
     <header>
         <nav>
             <a href="index.html" class="logo" aria-label="Torna alla Home">
-                <img src="images/fogliaLOGO.jpg" alt="Logo" class="logo-img">
+                <img src="images/LOGHI/fogliaLOGO.jpg" alt="Logo Davide Belpedio" class="logo-img">
                 <span class="logo-text">Dr. Davide Belpedio</span>
             </a>
             
@@ -446,10 +197,10 @@
         <div class="footer-container">
             <div class="footer-column reveal">
                 <a href="index.html" class="footer-logo">
-                    <img src="images/fogliaLOGO.jpg" alt="Logo Davide Belpedio">
+                    <img src="images/LOGHI/Davide_Belpedio_logo.png" alt="Green Lab Nero logo">
                     <span class="footer-logo-text">Davide Belpedio</span>
                 </a>
-                <p class="footer-desc">Dottore Agronomo e Paesaggista. Trasformiamo la natura in design attraverso consulenze agronomiche e progettazione del verde professionale.</p>
+                <p class="footer-desc">Dottore Agronomo e Paesaggista. Trasformiamo la nature in design attraverso consulenze agronomiche e progettazione del verde professionale.</p>
                 <div class="footer-social-icons">
                     <a href="https://www.instagram.com/green_labdesign/" target="_blank" class="footer-social-link" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
@@ -457,6 +208,11 @@
                     <a href="https://www.facebook.com/profile.php?id=100054199913680&locale=it_IT" target="_blank" class="footer-social-link" aria-label="Facebook">
                         <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-8.74h-2.94v-3.411h2.94v-2.511c0-2.915 1.781-4.502 4.38-4.502 1.245 0 2.316.093 2.628.134v3.046l-1.803.001c-1.414 0-1.687.672-1.687 1.658v2.174h3.37l-.439 3.411h-2.931v8.74h6.027c.732 0 1.325-.593 1.325-1.324v-21.351c0-.732-.593-1.325-1.325-1.325z"/></svg>
                     </a>
+                </div>
+                <div class="footer-brand-assets">
+                    <p class="footer-brand-text">Brand assets</p>
+                    <a href="images/LOGHI/Green Lab Design logo.pdf" class="footer-logo-download" download>Green Lab Design</a>
+                    <a href="images/LOGHI/Davide Belpedio logo.pdf" class="footer-logo-download" download>Davide Belpedio</a>
                 </div>
             </div>
 
@@ -502,6 +258,11 @@
 
     <!-- LOGICA JAVASCRIPT UNIFICATA -->
     <script>
+        // Transizione Pagina al caricamento
+        window.addEventListener('load', () => {
+            document.querySelector('.page-transition').classList.add('active');
+        });
+
         // Toggle Menu Hamburger
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('#nav-menu');
@@ -521,18 +282,6 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-        // Gestione movimento cursore personalizzato
-        const dot = document.querySelector('.cursor-dot');
-        const outline = document.querySelector('.cursor-outline');
-        window.addEventListener('mousemove', (e) => {
-            // Mostra i cursori al primo movimento
-            dot.style.opacity = "1";
-            outline.style.opacity = "1";
-            
-            dot.style.left = `${e.clientX}px`; dot.style.top = `${e.clientY}px`;
-            outline.animate({ left: `${e.clientX}px`, top: `${e.clientY}px` }, { duration: 500, fill: 'forwards' });
-        });
 
         // Logica Scroll Header e Back to Top
         window.addEventListener('scroll', () => {
